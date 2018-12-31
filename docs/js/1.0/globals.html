@@ -69,8 +69,8 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/canvasselection.html" class="tsd-kind-icon">Canvas<wbr>Selection</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/client.html" class="tsd-kind-icon">Client</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/edgeselection.html" class="tsd-kind-icon">Edge<wbr>Selection</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/eventhandler.html" class="tsd-kind-icon">Event<wbr>Handler</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/labelselection.html" class="tsd-kind-icon">Label<wbr>Selection</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/nodeselection.html" class="tsd-kind-icon">Node<wbr>Selection</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/selection.html" class="tsd-kind-icon">Selection</a></li>
@@ -88,6 +88,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="globals.html#canvas" class="tsd-kind-icon">canvas</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#client" class="tsd-kind-icon">client</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,7 +102,7 @@
 					<div class="tsd-signature tsd-kind-icon">Element<wbr>Arg<span class="tsd-signature-symbol">:</span> <a href="globals.html#elementfn" class="tsd-signature-type">ElementFn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/server/types/types.ts#L21">server/types/types.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/e53c416/src/server/types/types.ts#L21">server/types/types.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -117,7 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">Element<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/server/types/types.ts#L15">server/types/types.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/e53c416/src/server/types/types.ts#L15">server/types/types.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -167,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">Num<wbr>Expr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">INumExpr</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/server/types/types.ts#L37">server/types/types.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/e53c416/src/server/types/types.ts#L37">server/types/types.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -205,14 +206,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/index.ts#L13">index.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/e53c416/src/index.ts#L28">index.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Selects a canvas to use for rendering the network. The returned object will be responsible for storing application
-										state and providing an interface to the network&#39;s graphics. The canvas can be any <code>div</code> or <code>svg</code> element on the HTML
-									page, or an <code>SVGSVGElement</code>.</p>
+									<p>Creates a new <a href="interfaces/canvasselection.html">CanvasSelection</a>, providing an interface to the network&#39;s graphics. The network can be rendered in
+										any HTML element on the page (preferably a <code>div</code>), or an <code>Element</code> object. This will automatically initialize a
+									<a href="interfaces/client.html">Client</a> and return its corresponding interface.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -221,12 +222,49 @@
 									<h5>output: <span class="tsd-signature-type">Canvas</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The <code>id</code> attribute of an element on the HTML page to use as the canvas, or an <code>SVGSVGElement</code>.</p>
+											<p>The <code>id</code> attribute of an element on the HTML page to use as the canvas, or an <code>Element</code> object.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="interfaces/canvasselection.html" class="tsd-signature-type">CanvasSelection</a></h4>
+							<p>A new <a href="interfaces/canvasselection.html">CanvasSelection</a>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="client" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> client</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">(</span>output<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Canvas</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/client.html" class="tsd-signature-type">Client</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/e53c416/src/index.ts#L15">index.ts:15</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new <a href="interfaces/client.html">Client</a>, responsible for rendering the network, storing application state, and dispatching and receiving
+										events. The network can be rendered in any HTML element on the page (preferably a <code>div</code>), or an <code>Element</code> object.
+									A client should only be used directly if complete control over event handling is required.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>output: <span class="tsd-signature-type">Canvas</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <code>id</code> attribute of an element in which to render the network, or an <code>Element</code> object.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/client.html" class="tsd-signature-type">Client</a></h4>
+							<p>A new <a href="interfaces/client.html">Client</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -246,10 +284,10 @@
 						<a href="interfaces/canvasselection.html" class="tsd-kind-icon">Canvas<wbr>Selection</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/edgeselection.html" class="tsd-kind-icon">Edge<wbr>Selection</a>
+						<a href="interfaces/client.html" class="tsd-kind-icon">Client</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/eventhandler.html" class="tsd-kind-icon">Event<wbr>Handler</a>
+						<a href="interfaces/edgeselection.html" class="tsd-kind-icon">Edge<wbr>Selection</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/labelselection.html" class="tsd-kind-icon">Label<wbr>Selection</a>
@@ -271,6 +309,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#canvas" class="tsd-kind-icon">canvas</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#client" class="tsd-kind-icon">client</a>
 					</li>
 				</ul>
 			</nav>

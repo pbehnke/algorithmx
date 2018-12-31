@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EventHandler | algorithmx</title>
+	<title>Client | algorithmx</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,26 +54,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="eventhandler.html">EventHandler</a>
+					<a href="client.html">Client</a>
 				</li>
 			</ul>
-			<h1>Interface EventHandler</h1>
+			<h1>Interface Client</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An object responsible for rendering the network, storing application state, and dispatching and receiving events.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">EventHandler</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="canvasselection.html" class="tsd-signature-type">CanvasSelection</a>
-							</li>
-						</ul>
+						<span class="target">Client</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +86,9 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="eventhandler.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="eventhandler.html#receive" class="tsd-kind-icon">receive</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="client.html#canvas" class="tsd-kind-icon">canvas</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="client.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="client.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,21 +97,44 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="dispatch" class="tsd-anchor"></a>
-					<h3>dispatch</h3>
+					<a name="canvas" class="tsd-anchor"></a>
+					<h3>canvas</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">dispatch<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DispatchEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">canvas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="canvasselection.html" class="tsd-signature-type">CanvasSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/server/types/events.ts#L9">server/types/events.ts:9</a></li>
+									<li>Defined in server/types/client.ts:59</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Dispatches an event.</p>
+									<p>Creates a new <a href="canvasselection.html">CanvasSelection</a>, providing an interface to the network&#39;s graphics through the current client.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="canvasselection.html" class="tsd-signature-type">CanvasSelection</a></h4>
+							<p>a new <a href="canvasselection.html">CanvasSelection</a>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="dispatch" class="tsd-anchor"></a>
+					<h3>dispatch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">dispatch<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DispatchEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in server/types/client.ts:13</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Dispatches an event. More information to be provided soon.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -120,26 +146,26 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="receive" class="tsd-anchor"></a>
-					<h3>receive</h3>
+					<a name="subscribe" class="tsd-anchor"></a>
+					<h3>subscribe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">receive<span class="tsd-signature-symbol">(</span>listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/79f2f24/src/server/types/events.ts#L48">server/types/events.ts:48</a></li>
+									<li>Defined in server/types/client.ts:52</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Register a function to listen for events sent back by the client.
+									<p>Registers a function to listen for events sent back by the client.
 									The event will be a dictionary in one of the following formats:</p>
 								</div>
 								<p><strong>Error</strong></p>
@@ -217,7 +243,7 @@
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -236,24 +262,27 @@
 					<li class=" tsd-kind-interface">
 						<a href="canvasselection.html" class="tsd-kind-icon">Canvas<wbr>Selection</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="edgeselection.html" class="tsd-kind-icon">Edge<wbr>Selection</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="eventhandler.html" class="tsd-kind-icon">Event<wbr>Handler</a>
+						<a href="client.html" class="tsd-kind-icon">Client</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="eventhandler.html#dispatch" class="tsd-kind-icon">dispatch</a>
+								<a href="client.html#canvas" class="tsd-kind-icon">canvas</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="eventhandler.html#receive" class="tsd-kind-icon">receive</a>
+								<a href="client.html#dispatch" class="tsd-kind-icon">dispatch</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="client.html#subscribe" class="tsd-kind-icon">subscribe</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="edgeselection.html" class="tsd-kind-icon">Edge<wbr>Selection</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="labelselection.html" class="tsd-kind-icon">Label<wbr>Selection</a>
 					</li>
@@ -274,6 +303,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#canvas" class="tsd-kind-icon">canvas</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#client" class="tsd-kind-icon">client</a>
 					</li>
 				</ul>
 			</nav>
