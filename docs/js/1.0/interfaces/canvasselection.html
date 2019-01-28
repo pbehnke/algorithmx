@@ -136,7 +136,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#add">add</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L14">server/types/selection.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L14">server/types/selection.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -163,7 +163,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#animate">animate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L79">server/types/selection.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L79">server/types/selection.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,7 +203,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#broadcast">broadcast</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L191">server/types/selection.ts:191</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L191">server/types/selection.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -237,7 +237,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#callback">callback</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L210">server/types/selection.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L210">server/types/selection.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -275,28 +275,28 @@
 					<a name="cancel" class="tsd-anchor"></a>
 					<h3>cancel</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#cancel">cancel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L176">server/types/selection.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L176">server/types/selection.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Cancels all scheduled events on one or more event queues.
+									<p>Cancels all scheduled events on the given event queue.
 									Note that this will still be added as an event onto the current queue.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The name of the queue to cancel, or list of names. Defaults to &quot;default&quot;.</p>
+										<p>The ID of the queue to cancel, which will be converted to a string. Defaults to &quot;default&quot;.</p>
 									</div>
 								</li>
 							</ul>
@@ -315,7 +315,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#cancelall">cancelall</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L182">server/types/selection.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L182">server/types/selection.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -339,7 +339,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#data">data</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L133">server/types/selection.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L133">server/types/selection.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -375,7 +375,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#duration">duration</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L89">server/types/selection.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L89">server/types/selection.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,7 +409,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#ease">ease</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L110">server/types/selection.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L110">server/types/selection.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -446,13 +446,13 @@
 					<a name="edge" class="tsd-anchor"></a>
 					<h3>edge</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">edge<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="edgeselection.html" class="tsd-signature-type">EdgeSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">edge<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="edgeselection.html" class="tsd-signature-type">EdgeSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L37">server/types/canvas.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L38">server/types/canvas.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,9 +464,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>edge: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<h5>edge: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A (source, target) or (source, target, ID) tuple.</p>
+										<p>A (source, target) or (source, target, ID) tuple.
+										All values will be converted to strings.</p>
 									</div>
 								</li>
 							</ul>
@@ -485,7 +486,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L87">server/types/canvas.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L91">server/types/canvas.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -518,13 +519,13 @@
 					<a name="edges" class="tsd-anchor"></a>
 					<h3>edges</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>edges<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="edgeselection.html" class="tsd-signature-type">EdgeSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>edges<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="edgeselection.html" class="tsd-signature-type">EdgeSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L46">server/types/canvas.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L48">server/types/canvas.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -535,9 +536,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>edges: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>edges: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A list of (source, target) or (source, target, ID) tuples.</p>
+										<p>A list of (source, target) or (source, target, ID) tuples.
+										All values will be converted to strings.</p>
 									</div>
 								</li>
 							</ul>
@@ -557,7 +559,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#eventq">eventQ</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L65">server/types/selection.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L65">server/types/selection.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -594,7 +596,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#highlight">highlight</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L121">server/types/selection.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L121">server/types/selection.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -622,13 +624,13 @@
 					<a name="label" class="tsd-anchor"></a>
 					<h3>label</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="labelselection.html" class="tsd-signature-type">LabelSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="labelselection.html" class="tsd-signature-type">LabelSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L55">server/types/canvas.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L57">server/types/canvas.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,9 +641,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The ID of the label. Defaults to &quot;title&quot;.</p>
+										<p>The ID of the label, which will be converted to a string. Defaults to &quot;title&quot;.</p>
 									</div>
 								</li>
 							</ul>
@@ -654,13 +656,13 @@
 					<a name="labels" class="tsd-anchor"></a>
 					<h3>labels</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">labels<span class="tsd-signature-symbol">(</span>ids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="labelselection.html" class="tsd-signature-type">LabelSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">labels<span class="tsd-signature-symbol">(</span>ids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="labelselection.html" class="tsd-signature-type">LabelSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L64">server/types/canvas.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L67">server/types/canvas.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -671,9 +673,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ids: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>ids: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A list of labels IDs.</p>
+										<p>A list of labels IDs, which will be converted to strings.</p>
 									</div>
 								</li>
 							</ul>
@@ -693,7 +695,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L202">server/types/selection.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L202">server/types/selection.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -739,13 +741,13 @@
 					<a name="node" class="tsd-anchor"></a>
 					<h3>node</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nodeselection.html" class="tsd-signature-type">NodeSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nodeselection.html" class="tsd-signature-type">NodeSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L18">server/types/canvas.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L18">server/types/canvas.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -756,9 +758,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>id: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5>id: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The ID of the node.</p>
+										<p>The ID of the node, which will be converted to a string.</p>
 									</div>
 								</li>
 							</ul>
@@ -771,13 +773,13 @@
 					<a name="nodes" class="tsd-anchor"></a>
 					<h3>nodes</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">(</span>ids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nodeselection.html" class="tsd-signature-type">NodeSelection</a></li>
+						<li class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">(</span>ids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nodeselection.html" class="tsd-signature-type">NodeSelection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L27">server/types/canvas.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L27">server/types/canvas.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -788,9 +790,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ids: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>ids: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A list of node IDs.</p>
+										<p>A list of node IDs, which will be converted to strings.</p>
 									</div>
 								</li>
 							</ul>
@@ -809,7 +811,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L94">server/types/canvas.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L98">server/types/canvas.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -840,7 +842,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L113">server/types/canvas.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L117">server/types/canvas.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -875,7 +877,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#pause">pause</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L140">server/types/selection.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L140">server/types/selection.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -907,7 +909,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#remove">remove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L19">server/types/selection.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L19">server/types/selection.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -930,7 +932,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L42">server/types/selection.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L42">server/types/selection.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -977,7 +979,7 @@ node.set({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L73">server/types/canvas.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L77">server/types/canvas.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1004,28 +1006,28 @@ node.set({
 					<a name="start" class="tsd-anchor"></a>
 					<h3>start</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#start">start</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L162">server/types/selection.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L162">server/types/selection.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Starts/resumes the execution of all scheduled events on one or more event queues.
+									<p>Starts/resumes the execution of all scheduled events on the given event queue.
 									Note that this will still be added as an event onto the current queue.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The name of the queue to start, or list of names. Defaults to &quot;default&quot;.</p>
+										<p>The ID of the queue to start, which will be converted to a string. Defaults to &quot;default&quot;.</p>
 									</div>
 								</li>
 							</ul>
@@ -1044,7 +1046,7 @@ node.set({
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#startall">startall</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L168">server/types/selection.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L168">server/types/selection.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1061,28 +1063,28 @@ node.set({
 					<a name="stop" class="tsd-anchor"></a>
 					<h3>stop</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span>queue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#stop">stop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L148">server/types/selection.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L148">server/types/selection.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Stops the execution of all scheduled events on one or more event queues.
+									<p>Stops the execution of all scheduled events on the given event queue.
 									Note that this will still be added as an event onto the current queue.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queue: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The name of the queue to stop, or list of names. Defaults to &quot;default&quot;.</p>
+										<p>The ID of the queue to stop, which will be converted to a string. Defaults to &quot;default&quot;.</p>
 									</div>
 								</li>
 							</ul>
@@ -1101,7 +1103,7 @@ node.set({
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#stopall">stopall</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L154">server/types/selection.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L154">server/types/selection.ts:154</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1124,7 +1126,7 @@ node.set({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L138">server/types/canvas.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L142">server/types/canvas.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1162,7 +1164,7 @@ node.set({
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="selection.html">Selection</a>.<a href="selection.html#visible">visible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/selection.ts#L51">server/types/selection.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/selection.ts#L51">server/types/selection.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1195,7 +1197,7 @@ node.set({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L102">server/types/canvas.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L106">server/types/canvas.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1227,7 +1229,7 @@ node.set({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L130">server/types/canvas.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L134">server/types/canvas.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1258,7 +1260,7 @@ node.set({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/7bd83b1/src/server/types/canvas.ts#L123">server/types/canvas.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/algrx/algorithmx/blob/b12dff1/src/server/types/canvas.ts#L127">server/types/canvas.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
