@@ -1,0 +1,1206 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Selections &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Utilities" href="utils.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Selections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvasselection">CanvasSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodeselection">NodeSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edgeselection">EdgeSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#labelselection">LabelSelection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Selections</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/graphics/selections.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<span class="target" id="module-algorithmx"><span id="selections"></span></span><div class="section" id="id1">
+<h1>Selections<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="graphics.Selection">
+<em class="property">class </em><code class="sig-prename descclassname">graphics.</code><code class="sig-name descname">Selection</code><span class="sig-paren">(</span><em class="sig-param">context</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/Selection.html#Selection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="graphics.Selection.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds all elements in the current selection to the canvas. This should be called immediately after a
+selection of new elements is created. If the selection contains multiple elements, they will not necessarily be
+added in order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A new instance of the current selection with animations disabled, allowing initial attributes to be
+configured.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all elements in the current selection from the canvas.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param">attrs</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets one or more custom attributes on all elements in the current selection. The attributes are provided using
+a dictionary, where each (key, value) pair corresponds to the method and argument setting the same attribute.
+Keyword arguments can also be used in the same way. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span><span class="o">.</span><span class="n">svgattr</span><span class="p">(</span><span class="s1">&#39;stroke&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="c1"># is equivalent to</span>
+<span class="n">node</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+         <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+         <span class="n">svgattr</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;stroke&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span>
+         <span class="p">})</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attrs</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Dict[str, Any]]) – (Optional) A dictionary of custom attributes.</p></li>
+<li><p><strong>kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Custom attributes as keywork arguments.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.visible">
+<code class="sig-name descname">visible</code><span class="sig-paren">(</span><em class="sig-param">visible</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.visible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not the elements in the current selection should be visible. This can be animated in the same way
+as additions and removals. However, in contrast to removing, disabling visibility will not clear attributes or
+affect layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visible</strong> – Whether or not the elements should be visible.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.eventQ">
+<code class="sig-name descname">eventQ</code><span class="sig-paren">(</span><em class="sig-param">queue</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.eventQ"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.eventQ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the queue onto which all events triggered by the selection should be added. Each queue handles events
+independently, and all queues execute in parallel. Since queues can be delayed (see <a class="reference internal" href="#graphics.Selection.pause" title="graphics.Selection.pause"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pause()</span></code></a>), this
+effectively enables multiple animations to run simultaneously.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">None</span></code> queue is special; all events added to it will execute immediately. The default queue is named “default”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>queue</strong> (<em>Union</em><em>[</em><em>Any</em><em>, </em><em>None</em><em>]</em>) – The ID of the queue, which will be converted to a string, or <code class="docutils literal notranslate"><span class="pre">None</span></code> for the immediate queue.
+Defaults to “default”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new instance of the current selection using the specified event queue.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.duration">
+<code class="sig-name descname">duration</code><span class="sig-paren">(</span><em class="sig-param">seconds</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.duration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the duration of all animations triggered by the selection. A duration of <code class="docutils literal notranslate"><span class="pre">0</span></code> will ensure that changes
+occur immediately. The default duration is <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[int, float]]) – The animation duration, in seconds.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new instance of the current selection using the specified animation duration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.ease">
+<code class="sig-name descname">ease</code><span class="sig-paren">(</span><em class="sig-param">ease</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.ease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.ease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the ease function used in all animations triggered by the selection. This will affect the way attributes
+transition from one value to another. More information is available here: <a class="reference external" href="https://github.com/d3/d3-ease">https://github.com/d3/d3-ease</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ease</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – <p>The name of the ease function, based on the functions found in D3. The full list is below:</p>
+<p>”linear”,
+“poly”, “poly-in”, “poly-out”, “poly-in-out”,
+“quad”, “quad-in”, “quad-out”, “quad-in-out”,
+“cubic”, “cubic-in”, “cubic-out”, “cubic-in-out”,
+“sin”, “sin-in”, “sin-out”, “sin-in-out”,
+“exp”, “exp-in”, “exp-out”, “exp-in-out”,
+“circle”, “circle-in”, “circle-out”, “circle-in-out”,
+“elastic”, “elastic-in”, “elastic-out”, “elastic-in-out”,
+“back”, “back-in”, “back-out”, “back-in-out”,
+“bounce”, “bounce-in”, “bounce-out”, “bounce-in-out”.</p>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new instance of the current selection using the specified animation ease.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.highlight">
+<code class="sig-name descname">highlight</code><span class="sig-paren">(</span><em class="sig-param">seconds</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new selection through which all attribute changes are temporary. This is typically used to draw attention
+to a certain element without permanently changing its attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (Optional[<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[int, float]]]) – The amount of time attributes should remain ‘highlighted’, in seconds, before
+changing back to their original values. Defaults to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new instance of the current selection, where all attribute changes are temporary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.data">
+<code class="sig-name descname">data</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds the selection to a list of data values. This will decide the arguments provided whenever an attribute is
+configured using a function (see <a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – An iterable container of values to use as the data of this selection, which should have the same length as the number
+of elements in the selection. Alternatively, a function (<a class="reference internal" href="overview.html#graphics.types.ElementFn" title="graphics.types.ElementFn"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementFn</span></code></a>) transforming the selection’s previous data.
+Use <code class="docutils literal notranslate"><span class="pre">null</span></code> to unbind the selection from its data, in which case the selection will fall back on its parent’s data.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>data: Union[Iterable[Any], ElementFn[Any]]</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If the length of the data does not equal the number of elements in the selection.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new instance of the current selection bound to the given data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.pause">
+<code class="sig-name descname">pause</code><span class="sig-paren">(</span><em class="sig-param">seconds</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.pause"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a pause to the event queue, delaying the next event by the given number of seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – The duration of the pause, in seconds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><em class="sig-param">queue</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the execution of all scheduled events on the given event queue.
+Note that this will still be added as an event onto the current queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>queue</strong> (<em>Any</em>) – The ID of the queue to stop, which will be converted to a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.stopall">
+<code class="sig-name descname">stopall</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.stopall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.stopall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the execution of all scheduled events on all event queues.
+Note this will still be added as an event onto the current queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param">queue</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts/resumes the execution of all scheduled events on the given event queue.
+Note this will still be added as an event onto the current queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>queue</strong> (<em>Any</em>) – The name of the queue to start, or an iterable container of names. Defaults to “default”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.startall">
+<code class="sig-name descname">startall</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.startall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.startall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts/resumes the execution of all scheduled events on all event queues.
+Note that this will still be added as an event onto the current queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.cancel">
+<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><em class="sig-param">queue</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.cancel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancels all scheduled events on the given event queue.
+Note this will still be added as an event onto the current queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>queue</strong> (<em>Any</em>) – The name of the queue to cancel, or an iterable container of names. Defaults to “default”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.cancelall">
+<code class="sig-name descname">cancelall</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.cancelall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.cancelall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancels all scheduled events on all event queues.
+Note that this will still be added as an event onto the current queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.broadcast">
+<code class="sig-name descname">broadcast</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.broadcast"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.broadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a message to the event queue, which will trigger a corresponding listener (see <a class="reference internal" href="#graphics.Selection.listen" title="graphics.Selection.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">listen()</span></code></a>).
+This can be used to detect when a queue reaches a certain point in execution, or to enable communication between
+a server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – The message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.listen">
+<code class="sig-name descname">listen</code><span class="sig-paren">(</span><em class="sig-param">message</em>, <em class="sig-param">on_receive</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.listen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.listen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a function to listen for a specific broadcast message (see <a class="reference internal" href="#graphics.Selection.broadcast" title="graphics.Selection.broadcast"><code class="xref py py-meth docutils literal notranslate"><span class="pre">broadcast()</span></code></a>). The function will
+be called when the corresponding broadcast event is processed by the event queue. If the same message is broadcast
+multiple times, the function will be called each time. This will also override any previous function listening for
+the same message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>str</em>) – The message to listen for.</p></li>
+<li><p><strong>on_receive</strong> (<em>Callable</em>) – The function to call when the message is received.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.Selection.callback">
+<code class="sig-name descname">callback</code><span class="sig-paren">(</span><em class="sig-param">on_callback</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/Selection.html#Selection.callback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.Selection.callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a callback to the event queue. This is roughly equivalent to broadcasting a unique message and setting up
+a corresponding listener. The callback function is guaranteed to only execute once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>on_callback</strong> (<em>Callable</em>) – The function to call when the callback event is processed by the event queue.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="canvasselection">
+<h2>CanvasSelection<a class="headerlink" href="#canvasselection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="graphics.CanvasSelection">
+<em class="property">class </em><code class="sig-prename descclassname">graphics.</code><code class="sig-name descname">CanvasSelection</code><span class="sig-paren">(</span><em class="sig-param">context</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="graphics.CanvasSelection.node">
+<code class="sig-name descname">node</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span> &#x2192; graphics.NodeSelection.NodeSelection<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a single node by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>Any</em>) – The ID of the node, which will be converted to a string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.nodes">
+<code class="sig-name descname">nodes</code><span class="sig-paren">(</span><em class="sig-param">ids</em><span class="sig-paren">)</span> &#x2192; graphics.NodeSelection.NodeSelection<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects multiple nodes using a list of ID values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ids</strong> (<em>Iterable</em><em>[</em><em>Any</em><em>]</em>) – An iterable container of node IDs, which will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given nodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.edge">
+<code class="sig-name descname">edge</code><span class="sig-paren">(</span><em class="sig-param">edge</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a single edge by its source, target, and optional ID. The additional ID value will distinguish edges
+connected to the same nodes. Once the edge has been added, source and target nodes can be provided in any order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edge</strong> (<em>Tuple</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>, </em><em>Any</em><em>]</em>) – A (source, target) or (source, target, ID) tuple.
+All values will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given edge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.edges">
+<code class="sig-name descname">edges</code><span class="sig-paren">(</span><em class="sig-param">edges</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects multiple edges using a list of source, target, and optional ID tuples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edges</strong> (<em>Iterable</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – An iterable container of (source, target) or (source, target, ID) tuples.
+All values will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given edges.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.label">
+<code class="sig-name descname">label</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a single label, attached to the canvas, by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>Any</em>) – The ID of the label, which will be converted to a string. Defaults to “title”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.labels">
+<code class="sig-name descname">labels</code><span class="sig-paren">(</span><em class="sig-param">ids</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects multiple labels, attached to the canvas, using an array of ID values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ids</strong> (<em>Iterable</em><em>[</em><em>Any</em><em>]</em>) – An iterable container of labels IDs, which will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given labels.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>/**
+Sets the width and height of the canvas. This will determine the coordinate system, and will update the <code class="docutils literal notranslate"><span class="pre">width</span></code> and
+<code class="docutils literal notranslate"><span class="pre">height</span></code> attributes of the main SVG element, unless otherwise specified with <a class="reference internal" href="#graphics.CanvasSelection.svgattr" title="graphics.CanvasSelection.svgattr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">svgattr()</span></code></a>. Note that
+size is not animated by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – A (width, height) tuple describing the size of the canvas.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.edgelengths">
+<code class="sig-name descname">edgelengths</code><span class="sig-paren">(</span><em class="sig-param">length_info</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.edgelengths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.edgelengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets method used to calculate edge lengths. Edges can either specify individual length values (see <a class="reference internal" href="#graphics.EdgeSelection.length" title="graphics.EdgeSelection.length"><code class="xref py py-meth docutils literal notranslate"><span class="pre">length()</span></code></a>),
+or have their lengths dynamically calculated, in which case an ‘average length’ value can be provided.
+More information is available here: <a class="reference external" href="https://github.com/tgdwyer/WebCola/wiki/link-lengths">https://github.com/tgdwyer/WebCola/wiki/link-lengths</a>.</p>
+<p>The default setting is: (type=”jaccard”, average length=70).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>length_info</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[str, Tuple[str, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]]) – <p>Either a single string describing the edge length type, or a (type, average length) tuple.
+The valid edge length types are:</p>
+<ul class="simple">
+<li><p>”individual”: Uses each edge’s length attribute individually.</p></li>
+<li><p>”jaccard”, “symmetric”: Dynamic calculation using an ‘average length’ value.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.pan">
+<code class="sig-name descname">pan</code><span class="sig-paren">(</span><em class="sig-param">location</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.pan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.pan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the location of the canvas camera. The canvas uses a Cartesian coordinate system with (0, 0) at the center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>location</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – An (x, y) tuple describing the new pan location.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.zoom">
+<code class="sig-name descname">zoom</code><span class="sig-paren">(</span><em class="sig-param">zoom</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.zoom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the zoom level of the canvas camera. A zoom level of 2.0 will make objects appear twice as large, 0.5 will
+make them half as large, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zoom</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The new zoom level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.panlimit">
+<code class="sig-name descname">panlimit</code><span class="sig-paren">(</span><em class="sig-param">box</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.panlimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.panlimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restricts the movement of the canvas camera to the given bounding box, centered at (0, 0). The canvas will only
+be draggable when the camera is within the bounding box (i.e. the coordinates currently in view are a subset of the
+bounding box).</p>
+<p>The default pan limit is: (-Infinity, Infinity).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>box</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – A (width/2, height/2) tuple describing the bounding box.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.zoomlimit">
+<code class="sig-name descname">zoomlimit</code><span class="sig-paren">(</span><em class="sig-param">limit</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.zoomlimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.zoomlimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restricts the zoom level of the canvas camera to the given range. The lower bound describes how far
+away the camera can zoom, while the upper bound describes the maximum enlarging zoom.</p>
+<p>The default zoom limit is: (0.1, 10).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>limit</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – A (min, max) tuple describing the zoom limit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.zoomkey">
+<code class="sig-name descname">zoomkey</code><span class="sig-paren">(</span><em class="sig-param">required</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.zoomkey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.zoomkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not zooming requires the <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>/<code class="docutils literal notranslate"><span class="pre">cmd</span></code> key to be held down. Disabled by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>required</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – True if the <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>/<code class="docutils literal notranslate"><span class="pre">cmd</span></code> key is required, false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.CanvasSelection.svgattr">
+<code class="sig-name descname">svgattr</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/CanvasSelection.html#CanvasSelection.svgattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.CanvasSelection.svgattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom SVG attribute on the canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the SVG attribute.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[str, int, float, None]]) – The value of the SVG attribute.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="nodeselection">
+<h2>NodeSelection<a class="headerlink" href="#nodeselection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="graphics.NodeSelection">
+<em class="property">class </em><code class="sig-prename descclassname">graphics.</code><code class="sig-name descname">NodeSelection</code><span class="sig-paren">(</span><em class="sig-param">context</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="graphics.NodeSelection.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all nodes in the current selection from the canvas. Additionally, removes any edges connected to the nodes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.label">
+<code class="sig-name descname">label</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a single label, attached to the node, by its ID.</p>
+<p>By default, each node is initialized with a “value” label, located at the center of the node and displaying its ID.
+Any additional labels will be automatically positioned along the boundary of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>Any</em>) – The ID of the label, which will be converted to a string. Defaults to “value”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.labels">
+<code class="sig-name descname">labels</code><span class="sig-paren">(</span><em class="sig-param">ids</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects multiple labels, attached to the node, using a list of ID values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ids</strong> (<em>Iterable</em><em>[</em><em>Any</em><em>]</em>) – An iterable container of label IDs, which will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given labels.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.shape">
+<code class="sig-name descname">shape</code><span class="sig-paren">(</span><em class="sig-param">shape</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the shape of the node. Note that shape cannot be animated or highlighted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – <p>One of the following strings:</p>
+<ul class="simple">
+<li><p>”circle”: Standard circular node with a single radius dimension.</p></li>
+<li><p>”rect”: Rectangular node with separate width and height dimensions, and corner rounding.</p></li>
+<li><p>”ellipse”: Elliptical node with width and height dimensions.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.color">
+<code class="sig-name descname">color</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color of the node. The default color is “dark-gray”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – A CSS color string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the size of the node. If the node is a circle, a single radius value is sufficient.
+Otherwise, a tuple containing both the horizontal and vertical radius should be provided.</p>
+<p>Note that size can be set relative to the node’s current size using string expressions, e.g. “1.5x” for circles
+or (“1.5x”, “1.5y”) for rectangles and other shapes.</p>
+<p>The default size is (12, 12).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]]) – The radius of the node, or a (width/2, height/2) tuple.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.pos">
+<code class="sig-name descname">pos</code><span class="sig-paren">(</span><em class="sig-param">pos</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the position of the node. The canvas uses a Cartesian coordinate system with (0, 0) at the center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – An (x, y) tuple describing the new position of the node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.fixed">
+<code class="sig-name descname">fixed</code><span class="sig-paren">(</span><em class="sig-param">fixed</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.fixed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to true, this prevents the node from being automatically moved during the layout process.
+This does not affect manual dragging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fixed</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – True if the position of the node should be fixed, false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.draggable">
+<code class="sig-name descname">draggable</code><span class="sig-paren">(</span><em class="sig-param">draggable</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.draggable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.draggable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not the node can be manually dragged around.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>draggable</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – True if the node should be draggable, false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.click">
+<code class="sig-name descname">click</code><span class="sig-paren">(</span><em class="sig-param">on_click</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.click"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a function to listen for node click events.
+This will override any previous function listening for click events on the same node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>on_click</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementFn" title="graphics.types.ElementFn"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementFn</span></code></a>) – A function taking the node’s data (see <a class="reference internal" href="#graphics.Selection.data" title="graphics.Selection.data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">data()</span></code></a>) and, optionally, index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.hoverin">
+<code class="sig-name descname">hoverin</code><span class="sig-paren">(</span><em class="sig-param">on_hoverin</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.hoverin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.hoverin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a function to listen for node mouse-over events, triggered when the mouse enters the node.
+This will override any previous function listening for hover-in events on the same node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>on_hoverin</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementFn" title="graphics.types.ElementFn"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementFn</span></code></a>) – A function taking the node’s data (see <a class="reference internal" href="#graphics.Selection.data" title="graphics.Selection.data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">data()</span></code></a>) and, optionally, index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.hoverout">
+<code class="sig-name descname">hoverout</code><span class="sig-paren">(</span><em class="sig-param">on_hoverout</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.hoverout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.hoverout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a function to listen for node mouse-over events, triggered when the mouse leaves the node.
+This will override any previous function listening for hover-out events on the same node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>on_hoverout</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementFn" title="graphics.types.ElementFn"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementFn</span></code></a>) – A function taking the node’s data (see <a class="reference internal" href="#graphics.Selection.data" title="graphics.Selection.data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">data()</span></code></a>) and, optionally, index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.NodeSelection.svgattr">
+<code class="sig-name descname">svgattr</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/NodeSelection.html#NodeSelection.svgattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.NodeSelection.svgattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom SVG attribute on the node’s shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the SVG attribute.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[str, int, float, None]]) – The value of the SVG attribute.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="edgeselection">
+<h2>EdgeSelection<a class="headerlink" href="#edgeselection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="graphics.EdgeSelection">
+<em class="property">class </em><code class="sig-prename descclassname">graphics.</code><code class="sig-name descname">EdgeSelection</code><span class="sig-paren">(</span><em class="sig-param">context</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="graphics.EdgeSelection.traverse">
+<code class="sig-name descname">traverse</code><span class="sig-paren">(</span><em class="sig-param">source</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.traverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the selection’s animation type such that color (<a class="reference internal" href="#graphics.EdgeSelection.color" title="graphics.EdgeSelection.color"><code class="xref py py-meth docutils literal notranslate"><span class="pre">color()</span></code></a>) is animated with a traversal,
+and configures the node at which the traversal should begin.</p>
+<p>If no source is given, the first node in each edge tuple used to construct the selection will be used.
+If the source is not connected, the edge’s actual source will be used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source</strong> (Optional[<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Any]) – The ID of the node at which the traversal animation should begin,
+which will be converted to a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.label">
+<code class="sig-name descname">label</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a single label, attached to the edge, by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>Any</em>) – The ID of the label, which will be converted to a string. Defaults to “weight”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.labels">
+<code class="sig-name descname">labels</code><span class="sig-paren">(</span><em class="sig-param">ids</em><span class="sig-paren">)</span> &#x2192; graphics.LabelSelection.LabelSelection<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects multiple labels, attached to the edge, using a list of ID values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ids</strong> (<em>Iterable</em><em>[</em><em>Any</em><em>]</em>) – An iterable container of label IDs, which will be converted to strings.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new selection corresponding to the given labels.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.directed">
+<code class="sig-name descname">directed</code><span class="sig-paren">(</span><em class="sig-param">directed</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.directed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.directed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not the edge should include an arrow pointing towards its target node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>directed</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – True if the edge should be directed, false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><em class="sig-param">length</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the length of the edge. This will only take effect when <a class="reference internal" href="#graphics.CanvasSelection.edgelengths" title="graphics.CanvasSelection.edgelengths"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edgelengths()</span></code></a> is set to “individual”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>length</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The length of the edge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.thickness">
+<code class="sig-name descname">thickness</code><span class="sig-paren">(</span><em class="sig-param">thickness</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.thickness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the thickness of the edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>thickness</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The thickness of the edge.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.color">
+<code class="sig-name descname">color</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets color of the edge. Note that this can be animated with a traversal animation (see <a class="reference internal" href="#graphics.EdgeSelection.traverse" title="graphics.EdgeSelection.traverse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">traverse()</span></code></a>).
+The default color is “light-gray”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – A CSS color string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.flip">
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">flip</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.flip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not the edge should be ‘flipped’ after exceeding a certain angle, such that it is never rendered
+upside-down. This only applies to edges connecting two nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>flip</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – True if the edge should flip automatically, false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.curve">
+<code class="sig-name descname">curve</code><span class="sig-paren">(</span><em class="sig-param">curve</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.curve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the curve function used to interpolate the edge’s path. The default setting is “cardinal”. More
+information is available here: <a class="reference external" href="https://github.com/d3/d3-shape#curves">https://github.com/d3/d3-shape#curves</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>curve</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – <p>The name of the curve function, based on the functions found in D3. The full list is below:</p>
+<p>”basis”,
+“bundle”,
+“cardinal”,
+“catmull-rom”,
+“linear”,
+“monotone-x”,
+“monotone-y”,
+“natural”,
+“step”, “step-before”, “step-after”</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.path">
+<code class="sig-name descname">path</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom path for the edge. The path is a list of (x, y) tuples, relative to the edge’s origin, which will
+automatically connect to the boundaries of the source and target nodes.</p>
+<p>If the edge connects two nodes, (0, 0) will be the midpoint between the two nodes. If edge is a looping edge
+connecting one node, (0, 0) will be a point along the node’s boundary, in the direction of the edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Iterable[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]]) – An iterable container of (x, y) tuples.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.EdgeSelection.svgattr">
+<code class="sig-name descname">svgattr</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/EdgeSelection.html#EdgeSelection.svgattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.EdgeSelection.svgattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom SVG attribute on the edge’s path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the SVG attribute.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[str, int, float, None]]) – The value of the SVG attribute.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="labelselection">
+<h2>LabelSelection<a class="headerlink" href="#labelselection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="graphics.LabelSelection">
+<em class="property">class </em><code class="sig-prename descclassname">graphics.</code><code class="sig-name descname">LabelSelection</code><span class="sig-paren">(</span><em class="sig-param">context</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="graphics.LabelSelection.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the text displayed by the label. The newline character (“\n”) can be used to break the text into multiple lines.
+Note that text cannot be animated or highlighted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – The text displayed by the label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.align">
+<code class="sig-name descname">align</code><span class="sig-paren">(</span><em class="sig-param">align</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.align"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets alignment of the label’s text. This will affect the direction in which text is appended, as well as its
+positioning relative to the label’s base position. For example, an alignment of “top-left” will ensure that the top
+left corner of the label is located at its base position.</p>
+<p>A special “radial” alignment can be used to dynamically calculate the label’s alignment based on its <a class="reference internal" href="#graphics.LabelSelection.angle" title="graphics.LabelSelection.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a>
+and <a class="reference internal" href="#graphics.LabelSelection.rotate" title="graphics.LabelSelection.rotate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rotate()</span></code></a> attributes, such that text is optimally positioned around an element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>align</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – <p>A string describing the alignment, typically in the form “vertical-horizontal”. The full list is below:</p>
+<p>”top-left”, “top-middle”, “top-right”,
+“middle-left”, “middle”, “middle-right”,
+“bottom-left”, “bottom-middle”, “bottom-right”,
+“radial”.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.pos">
+<code class="sig-name descname">pos</code><span class="sig-paren">(</span><em class="sig-param">pos</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the position of the the label relative to its parent element. This will always involve a Cartesian coordinate
+system. If the parent is a node, (0, 0) will be its center. If the parent is an edge connecting two nodes, (0, 0)
+will be the midpoint between the two nodes. If the parent is a looping edge connecting one node, (0, 0) will be a
+point along the node’s boundary, in the direction of the edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Tuple[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>, <a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]]) – An (x, y) tuple describing the position of the label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.radius">
+<code class="sig-name descname">radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.radius"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the label to be positioned using polar coordinates, together with the <a class="reference internal" href="#graphics.LabelSelection.angle" title="graphics.LabelSelection.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a> attribute.
+This will specify the distance from the label’s base position (see <a class="reference internal" href="#graphics.LabelSelection.pos" title="graphics.LabelSelection.pos"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pos()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>radius</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The polar radius, defined as the distance from the label’s base position.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.angle">
+<code class="sig-name descname">angle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.angle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the label to be positioned using polar coordinates, together with the <a class="reference internal" href="#graphics.LabelSelection.radius" title="graphics.LabelSelection.radius"><code class="xref py py-meth docutils literal notranslate"><span class="pre">radius()</span></code></a> attribute.
+This will specify the angle, in degrees, along a standard unit circle centered at the label’s base position
+(see <a class="reference internal" href="#graphics.LabelSelection.pos" title="graphics.LabelSelection.pos"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pos()</span></code></a>).</p>
+<p>Additionally, this will affect the rotation of the label, if enabled (see <a class="reference internal" href="#graphics.LabelSelection.rotate" title="graphics.LabelSelection.rotate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rotate()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The polar angle, in degrees, increasing counter-clockwise from the x-axis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.rotate">
+<code class="sig-name descname">rotate</code><span class="sig-paren">(</span><em class="sig-param">rotate</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.rotate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether or not the label should rotate, using its <a class="reference internal" href="#graphics.LabelSelection.angle" title="graphics.LabelSelection.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a> attribute. The exact rotation
+will also depend on the label’s alignment. For example, an alignment of “top-center” together with an angle of 90
+degrees will result in the text being upside-down.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rotate</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[bool]) – Whether or not the label should rotate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.color">
+<code class="sig-name descname">color</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color of the label’s text. The default color is “gray”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – A CSS color string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.font">
+<code class="sig-name descname">font</code><span class="sig-paren">(</span><em class="sig-param">font</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the font of the label’s text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>font</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[str]) – A CSS font-family string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span> &#x2192; self<a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the size of the label’s text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[<a class="reference internal" href="overview.html#graphics.types.NumExpr" title="graphics.types.NumExpr"><code class="xref py py-data docutils literal notranslate"><span class="pre">NumExpr</span></code></a>]) – The size of the label’s text, in pixels.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphics.LabelSelection.svgattr">
+<code class="sig-name descname">svgattr</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphics/LabelSelection.html#LabelSelection.svgattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphics.LabelSelection.svgattr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom SVG attribute on the label’s text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the SVG attribute.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="overview.html#graphics.types.ElementArg" title="graphics.types.ElementArg"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementArg</span></code></a>[Union[str, int, float, None]]) – The value of the SVG attribute.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="Utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

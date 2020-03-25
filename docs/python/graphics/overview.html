@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Selections" href="selections.html" />
+    <link rel="prev" title="Jupyter Widget" href="../jupyter-widget.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-selections">Using Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-arguments">Functional Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/graphics/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<span class="target" id="module-algorithmx"><span id="graphics-overview"></span></span><div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The AlgorithmX graphics library provides a selection-based interface for creating interactive network visualizations.
+At the root of each visualization is a <a class="reference internal" href="selections.html#graphics.CanvasSelection" title="graphics.CanvasSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanvasSelection</span></code></a>, which can be created either through a
+HTTP Server (<a class="reference internal" href="../http-server.html#algorithmx.server.Server.canvas" title="algorithmx.server.Server.canvas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">canvas()</span></code></a>), or a Jupyter widget (<a class="reference internal" href="../jupyter-widget.html#algorithmx.jupyter_canvas" title="algorithmx.jupyter_canvas"><code class="xref py py-func docutils literal notranslate"><span class="pre">jupyter_canvas()</span></code></a>).</p>
+<p>The purpose of the library is to provide a way to manipulate the graphics representing a network, by sending
+events directly to the client. As such, it does not keep track of any state (except for callbacks). In order to
+store and analyze the network, you can combine this with another library, such as <a class="reference external" href="https://networkx.github.io/">NetworkX</a>.</p>
+<div class="section" id="using-selections">
+<h2>Using Selections<a class="headerlink" href="#using-selections" title="Permalink to this headline">¶</a></h2>
+<p>Every selection corresponds to one or more graphical objects in the network. If a selection is created with objects that
+do not exist in the network yet, these can be added by calling <a class="reference internal" href="selections.html#graphics.Selection.add" title="graphics.Selection.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code></a>. Selections will provide a range of
+methods for setting custom attributes, configuring animations, and interacting with event queues.</p>
+<p>Below is an example showing how selections can be created, added, modified and removed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a big red node</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Add a label to the node</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;My Label&#39;</span><span class="p">)</span>
+
+<span class="c1"># Pause for half a second</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Modify the color of the node</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Temporarily make the node 1.25 times as big</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">highlight</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="s1">&#39;1.25x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a few more modes</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="c1"># Add an edge</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="c1"># Remove the first node</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Attributes can also be configured using the <a class="reference internal" href="selections.html#graphics.Selection.set" title="graphics.Selection.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure the attributes of a label</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+    <span class="n">size</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Courier&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functional-arguments">
+<h2>Functional Arguments<a class="headerlink" href="#functional-arguments" title="Permalink to this headline">¶</a></h2>
+<p>All selection methods can take functions as arguments, allowing attributes to be
+configured differently depending on each element’s data and index within the selection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditionally set color using id</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span> <span class="k">else</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Conditionally set color using index</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># Conditionally set color using data binding</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="data">
+<dt id="graphics.types.ElementFn">
+<code class="sig-prename descclassname">graphics.types.</code><code class="sig-name descname">ElementFn</code><em class="property"> = typing.Union[typing.Callable[[typing.Any], ~T], typing.Callable[[typing.Any, int], ~T]]</em><a class="headerlink" href="#graphics.types.ElementFn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function taking a selected element’s data as input. This is typically provided as an argument in a selection method,
+allowing attributes to be configured differently for each element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ElementFn.data</strong> – The data associated with the element.
+If the <a class="reference internal" href="selections.html#graphics.Selection.data" title="graphics.Selection.data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">data()</span></code></a> method was used previously in the method chain, it will determine the type of data used.
+If the selection has no associated data, it will fall back on its parent’s data (as is the case for <a class="reference internal" href="selections.html#graphics.LabelSelection" title="graphics.LabelSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">LabelSelection</span></code></a>).
+Otherwise, the information used to construct the selection will serve as its data (such as node ID values and edge tuples).</p></li>
+<li><p><strong>ElementFn.index</strong> – (Optional) The index of the element in the selection, beginning at 0, determined by its position in the list
+initially used to construct the selection.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="graphics.types.ElementArg">
+<code class="sig-prename descclassname">graphics.types.</code><code class="sig-name descname">ElementArg</code><em class="property"> = typing.Union[typing.Callable[[typing.Any], ~T], typing.Callable[[typing.Any, int], ~T], ~T]</em><a class="headerlink" href="#graphics.types.ElementArg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows an argument to be provided either directly, or as a function of each element’s data
+(see <a class="reference internal" href="#graphics.types.ElementFn" title="graphics.types.ElementFn"><code class="xref py py-data docutils literal notranslate"><span class="pre">ElementFn</span></code></a> and <a class="reference internal" href="selections.html#graphics.Selection.data" title="graphics.Selection.data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">data()</span></code></a>).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
+<p>Most numerical attributes can also be specified as linear expressions, often allowing for easier and more powerful configuration.
+Expressions use variables corresponding to other attributes; for example, a label could be positioned relative to it’s
+parent node without needing to know the node’s size, and would be re-positioned accordingly when the node’s size changes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Position a label in the top-left corner of a node</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">()</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="s1">&#39;top-left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pos</span><span class="p">((</span><span class="s1">&#39;-x+5&#39;</span><span class="p">,</span> <span class="s1">&#39;y-5&#39;</span><span class="p">))</span>
+
+<span class="c1"># Pin a node to the canvas using a relative position</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fixed</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">pos</span><span class="p">((</span><span class="s1">&#39;-0.5cx&#39;</span><span class="p">,</span> <span class="s1">&#39;-0.5cy&#39;</span><span class="p">))</span>
+
+<span class="c1"># Change the size of a node relative to it&#39;s current size</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;rect&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">((</span><span class="s1">&#39;1.25x&#39;</span><span class="p">,</span> <span class="s1">&#39;1.25y&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="data">
+<dt id="graphics.types.NumExpr">
+<code class="sig-prename descclassname">graphics.types.</code><code class="sig-name descname">NumExpr</code><em class="property"> = typing.Union[int, float, str, typing.Dict]</em><a class="headerlink" href="#graphics.types.NumExpr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A number, or an expression evaluating to a number. Expressions must be in the form <code class="docutils literal notranslate"><span class="pre">mx+c</span></code>, described by either an
+<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">m,</span> <span class="pre">x,</span> <span class="pre">c</span> <span class="pre">}</span></code> dictionary, or an expression string such as “-2x+8”. Both <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code> are constants, while <code class="docutils literal notranslate"><span class="pre">x</span></code> is a
+variable corresponding to some other attribute. Below is a list of valid variables and the context in which they
+can be used:</p>
+<ul class="simple">
+<li><p>“cx”: Half the width of the canvas.</p></li>
+<li><p>“cy”: Half the height of the canvas.</p></li>
+<li><dl class="simple">
+<dt>nodes</dt><dd><ul>
+<li><p>“x”: Half the width of the node.</p></li>
+<li><p>“y”: Half the height of the node.</p></li>
+<li><dl class="simple">
+<dt>labels</dt><dd><ul>
+<li><p>“r”: Distance from the center of the node to its boundary given the angle attribute of the label.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="selections.html" class="btn btn-neutral float-right" title="Selections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../jupyter-widget.html" class="btn btn-neutral float-left" title="Jupyter Widget" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

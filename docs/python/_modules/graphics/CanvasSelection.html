@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>graphics.CanvasSelection &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>graphics.CanvasSelection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for graphics.CanvasSelection</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">from</span> <span class="nn">.Selection</span> <span class="kn">import</span> <span class="n">Selection</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">ElementArg</span><span class="p">,</span> <span class="n">NumExpr</span>
+<span class="kn">from</span> <span class="nn">.NodeSelection</span> <span class="kn">import</span> <span class="n">NodeSelection</span>
+<span class="kn">from</span> <span class="nn">.EdgeSelection</span> <span class="kn">import</span> <span class="n">EdgeSelection</span>
+<span class="kn">from</span> <span class="nn">.LabelSelection</span> <span class="kn">import</span> <span class="n">LabelSelection</span>
+<span class="kn">from</span> <span class="nn">.context</span> <span class="kn">import</span> <span class="n">SelectionContext</span><span class="p">,</span> <span class="n">SelectionListeners</span><span class="p">,</span> <span class="n">create_child_context</span>
+<span class="kn">from</span> <span class="nn">.EventHandler</span> <span class="kn">import</span> <span class="n">EventHandler</span><span class="p">,</span> <span class="n">ReceiveEvent</span><span class="p">,</span> <span class="n">ReceiveEventType</span><span class="p">,</span> <span class="n">DispatchEvent</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">attr_event</span>
+
+<span class="k">class</span> <span class="nc">GraphicsException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">receive_handler</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">ReceiveEvent</span><span class="p">,</span> <span class="n">listeners</span><span class="p">:</span> <span class="n">SelectionListeners</span><span class="p">):</span>
+    <span class="n">event_data</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">trigger_listener</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">listeners</span><span class="p">:</span>
+            <span class="n">listeners</span><span class="p">[</span><span class="n">name</span><span class="p">]()</span>
+
+    <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ReceiveEventType</span><span class="o">.</span><span class="n">Broadcast</span><span class="p">:</span>
+        <span class="n">trigger_listener</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
+
+    <span class="k">elif</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ReceiveEventType</span><span class="o">.</span><span class="n">Click</span><span class="p">:</span>
+        <span class="n">trigger_listener</span><span class="p">(</span><span class="s1">&#39;click-node-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]))</span>
+
+    <span class="k">elif</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ReceiveEventType</span><span class="o">.</span><span class="n">Hover</span><span class="p">:</span>
+        <span class="n">trigger_listener</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-node-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;hoverin&#39;</span> <span class="k">if</span> <span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;entered&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="s1">&#39;hoverout&#39;</span><span class="p">,</span> <span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]))</span>
+
+    <span class="k">elif</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ReceiveEventType</span><span class="o">.</span><span class="n">Error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">GraphicsException</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;CanvasSelection&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CanvasSelection"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection">[docs]</a><span class="k">class</span> <span class="nc">CanvasSelection</span><span class="p">(</span><span class="n">Selection</span><span class="p">):</span>
+<div class="viewcode-block" id="CanvasSelection.node"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.node">[docs]</a>    <span class="k">def</span> <span class="nf">node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NodeSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects a single node by its ID.</span>
+
+<span class="sd">        :param id: The ID of the node, which will be converted to a string.</span>
+<span class="sd">        :type id: Any</span>
+
+<span class="sd">        :return: A new selection corresponding to the given node.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="nb">id</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.nodes"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.nodes">[docs]</a>    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">NodeSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects multiple nodes using a list of ID values.</span>
+
+<span class="sd">        :param ids: An iterable container of node IDs, which will be converted to strings.</span>
+<span class="sd">        :type ids: Iterable[Any]</span>
+
+<span class="sd">        :return: A new selection corresponding to the given nodes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node_context</span> <span class="o">=</span> <span class="n">create_child_context</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;nodes&#39;</span><span class="p">,</span>
+            <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">NodeSelection</span><span class="p">(</span><span class="n">node_context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.edge"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.edge">[docs]</a>    <span class="k">def</span> <span class="nf">edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edge</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects a single edge by its source, target, and optional ID. The additional ID value will distinguish edges</span>
+<span class="sd">        connected to the same nodes. Once the edge has been added, source and target nodes can be provided in any order.</span>
+
+<span class="sd">        :param edge: A (source, target) or (source, target, ID) tuple.</span>
+<span class="sd">            All values will be converted to strings.</span>
+<span class="sd">        :type edge: Tuple[Any, Any]</span>
+<span class="sd">        :type edge: Tuple[Any, Any, Any]</span>
+
+<span class="sd">        :return: A new selection corresponding to the given edge.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="n">edge</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.edges"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.edges">[docs]</a>    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edges</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects multiple edges using a list of source, target, and optional ID tuples.</span>
+
+<span class="sd">        :param edges: An iterable container of (source, target) or (source, target, ID) tuples.</span>
+<span class="sd">            All values will be converted to strings.</span>
+<span class="sd">        :type edges: Iterable[Union[Tuple[Any, Any], Tuple[Any, Any, Any]]]</span>
+
+<span class="sd">        :return: A new selection corresponding to the given edges.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">edge_ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">initattr</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+            <span class="n">ordered_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+            <span class="n">ordered_nodes</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+            <span class="n">edge_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ordered_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ordered_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+            <span class="n">initattr</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">])})</span>
+
+        <span class="n">edge_context</span> <span class="o">=</span> <span class="n">create_child_context</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;edges&#39;</span><span class="p">,</span>
+            <span class="n">ids</span><span class="o">=</span><span class="n">edge_ids</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">edges</span><span class="p">),</span> <span class="n">initattr</span><span class="o">=</span><span class="n">initattr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EdgeSelection</span><span class="p">(</span><span class="n">edge_context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.label"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.label">[docs]</a>    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LabelSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects a single label, attached to the canvas, by its ID.</span>
+
+<span class="sd">        :param id: The ID of the label, which will be converted to a string. Defaults to &quot;title&quot;.</span>
+<span class="sd">        :type id: Any</span>
+
+<span class="sd">        :return: A new selection corresponding to the given label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">([</span><span class="nb">id</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.labels"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.labels">[docs]</a>    <span class="k">def</span> <span class="nf">labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">LabelSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects multiple labels, attached to the canvas, using an array of ID values.</span>
+
+<span class="sd">        :param ids: An iterable container of labels IDs, which will be converted to strings.</span>
+<span class="sd">        :type ids: Iterable[Any]</span>
+
+<span class="sd">        :return: A new selection corresponding to the given labels.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">label_context</span> <span class="o">=</span> <span class="n">create_child_context</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;labels&#39;</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LabelSelection</span><span class="p">(</span><span class="n">label_context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.size"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        /**</span>
+<span class="sd">        Sets the width and height of the canvas. This will determine the coordinate system, and will update the ``width`` and</span>
+<span class="sd">        ``height`` attributes of the main SVG element, unless otherwise specified with :meth:`~svgattr`. Note that</span>
+<span class="sd">        size is not animated by default.</span>
+
+<span class="sd">        :param size: A (width, height) tuple describing the size of the canvas.</span>
+<span class="sd">        :type size: :data:`~graphics.types.ElementArg`\\[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.edgelengths"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.edgelengths">[docs]</a>    <span class="k">def</span> <span class="nf">edgelengths</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">length_info</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets method used to calculate edge lengths. Edges can either specify individual length values (see :meth:`~graphics.EdgeSelection.length`),</span>
+<span class="sd">        or have their lengths dynamically calculated, in which case an &#39;average length&#39; value can be provided.</span>
+<span class="sd">        More information is available here: `&lt;https://github.com/tgdwyer/WebCola/wiki/link-lengths&gt;`_.</span>
+
+<span class="sd">        The default setting is: (type=&quot;jaccard&quot;, average length=70).</span>
+
+<span class="sd">        :param length_info: Either a single string describing the edge length type, or a (type, average length) tuple.</span>
+<span class="sd">            The valid edge length types are:</span>
+
+<span class="sd">            * &quot;individual&quot;: Uses each edge&#39;s length attribute individually.</span>
+<span class="sd">            * &quot;jaccard&quot;, &quot;symmetric&quot;: Dynamic calculation using an &#39;average length&#39; value.</span>
+<span class="sd">        :type length_info: :data:`~graphics.types.ElementArg`\\[Union[str, Tuple[str, :data:`~graphics.types.NumExpr`]]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">length_info</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;edgelengths&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.pan"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.pan">[docs]</a>    <span class="k">def</span> <span class="nf">pan</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the location of the canvas camera. The canvas uses a Cartesian coordinate system with (0, 0) at the center.</span>
+
+<span class="sd">        :param location: An (x, y) tuple describing the new pan location.</span>
+<span class="sd">        :type location: :data:`~graphics.types.ElementArg`\\[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;pan&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.zoom"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.zoom">[docs]</a>    <span class="k">def</span> <span class="nf">zoom</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">zoom</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the zoom level of the canvas camera. A zoom level of 2.0 will make objects appear twice as large, 0.5 will</span>
+<span class="sd">        make them half as large, etc.</span>
+
+<span class="sd">        :param zoom: The new zoom level.</span>
+<span class="sd">        :type zoom: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">zoom</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;zoom&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.panlimit"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.panlimit">[docs]</a>    <span class="k">def</span> <span class="nf">panlimit</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restricts the movement of the canvas camera to the given bounding box, centered at (0, 0). The canvas will only</span>
+<span class="sd">        be draggable when the camera is within the bounding box (i.e. the coordinates currently in view are a subset of the</span>
+<span class="sd">        bounding box).</span>
+
+<span class="sd">        The default pan limit is: (-Infinity, Infinity).</span>
+
+<span class="sd">        :param box: A (width/2, height/2) tuple describing the bounding box.</span>
+<span class="sd">        :type box: :data:`~graphics.types.ElementArg`\\[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;panlimit&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.zoomlimit"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.zoomlimit">[docs]</a>    <span class="k">def</span> <span class="nf">zoomlimit</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restricts the zoom level of the canvas camera to the given range. The lower bound describes how far</span>
+<span class="sd">        away the camera can zoom, while the upper bound describes the maximum enlarging zoom.</span>
+
+<span class="sd">        The default zoom limit is: (0.1, 10).</span>
+
+<span class="sd">        :param limit: A (min, max) tuple describing the zoom limit.</span>
+<span class="sd">        :type limit: :data:`~graphics.types.ElementArg`\\[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;zoomlimit&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.zoomkey"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.zoomkey">[docs]</a>    <span class="k">def</span> <span class="nf">zoomkey</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">required</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets whether or not zooming requires the ``ctrl``/``cmd`` key to be held down. Disabled by default.</span>
+
+<span class="sd">        :param required: True if the ``ctrl``/``cmd`` key is required, false otherwise.</span>
+<span class="sd">        :type required: :data:`~graphics.types.ElementArg`\\[bool]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">required</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;zoomkey&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span></div>
+
+<div class="viewcode-block" id="CanvasSelection.svgattr"><a class="viewcode-back" href="../../graphics/selections.html#graphics.CanvasSelection.svgattr">[docs]</a>    <span class="k">def</span> <span class="nf">svgattr</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets a custom SVG attribute on the canvas.</span>
+
+<span class="sd">        :param key: The name of the SVG attribute.</span>
+<span class="sd">        :type key: str</span>
+
+<span class="sd">        :param value: The value of the SVG attribute.</span>
+<span class="sd">        :type value: :data:`~graphics.types.ElementArg`\\[Union[str, int, float, None]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;svgattr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">d</span><span class="p">}}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+
+
+<span class="k">def</span> <span class="nf">canvas_selection</span><span class="p">(</span><span class="n">canvas</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">handler</span><span class="p">:</span> <span class="n">EventHandler</span><span class="p">,</span>
+                     <span class="n">canvas_class</span><span class="p">:</span> <span class="n">CanvasSelection</span> <span class="o">=</span> <span class="n">CanvasSelection</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CanvasSelection</span><span class="p">:</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">SelectionContext</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;canvas&#39;</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">canvas</span><span class="p">]</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">canvas</span><span class="p">]</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="k">lambda</span> <span class="n">event</span><span class="p">:</span> <span class="n">receive_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="o">.</span><span class="n">listeners</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">canvas_class</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

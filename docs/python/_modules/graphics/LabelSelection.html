@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>graphics.LabelSelection &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>graphics.LabelSelection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for graphics.LabelSelection</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">TypeVar</span>
+
+<span class="kn">from</span> <span class="nn">.Selection</span> <span class="kn">import</span> <span class="n">Selection</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">ElementArg</span><span class="p">,</span> <span class="n">NumExpr</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">attr_event</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;LabelSelection&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LabelSelection"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection">[docs]</a><span class="k">class</span> <span class="nc">LabelSelection</span><span class="p">(</span><span class="n">Selection</span><span class="p">):</span>
+<div class="viewcode-block" id="LabelSelection.text"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the text displayed by the label. The newline character (&quot;\\\\n&quot;) can be used to break the text into multiple lines.</span>
+<span class="sd">        Note that text cannot be animated or highlighted.</span>
+
+<span class="sd">        :param text: The text displayed by the label.</span>
+<span class="sd">        :type text: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.align"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.align">[docs]</a>    <span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">align</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets alignment of the label&#39;s text. This will affect the direction in which text is appended, as well as its</span>
+<span class="sd">        positioning relative to the label&#39;s base position. For example, an alignment of &quot;top-left&quot; will ensure that the top</span>
+<span class="sd">        left corner of the label is located at its base position.</span>
+
+<span class="sd">        A special &quot;radial&quot; alignment can be used to dynamically calculate the label&#39;s alignment based on its :meth:`~graphics.LabelSelection.angle`</span>
+<span class="sd">        and :meth:`~graphics.LabelSelection.rotate` attributes, such that text is optimally positioned around an element.</span>
+
+<span class="sd">        :param align: A string describing the alignment, typically in the form &quot;vertical-horizontal&quot;. The full list is below:</span>
+
+<span class="sd">            &quot;top-left&quot;, &quot;top-middle&quot;, &quot;top-right&quot;,</span>
+<span class="sd">            &quot;middle-left&quot;, &quot;middle&quot;, &quot;middle-right&quot;,</span>
+<span class="sd">            &quot;bottom-left&quot;, &quot;bottom-middle&quot;, &quot;bottom-right&quot;,</span>
+<span class="sd">            &quot;radial&quot;.</span>
+
+<span class="sd">        :type align: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.pos"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.pos">[docs]</a>    <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the position of the the label relative to its parent element. This will always involve a Cartesian coordinate</span>
+<span class="sd">        system. If the parent is a node, (0, 0) will be its center. If the parent is an edge connecting two nodes, (0, 0)</span>
+<span class="sd">        will be the midpoint between the two nodes. If the parent is a looping edge connecting one node, (0, 0) will be a</span>
+<span class="sd">        point along the node&#39;s boundary, in the direction of the edge.</span>
+
+<span class="sd">        :param pos: An (x, y) tuple describing the position of the label.</span>
+<span class="sd">        :type pos: :data:`~graphics.types.ElementArg`\\[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;pos&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.radius"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.radius">[docs]</a>    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allows the label to be positioned using polar coordinates, together with the :meth:`~graphics.LabelSelection.angle` attribute.</span>
+<span class="sd">        This will specify the distance from the label&#39;s base position (see :meth:`~graphics.LabelSelection.pos`).</span>
+
+<span class="sd">        :param radius: The polar radius, defined as the distance from the label&#39;s base position.</span>
+<span class="sd">        :type radius: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;radius&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.angle"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.angle">[docs]</a>    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">angle</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allows the label to be positioned using polar coordinates, together with the :meth:`~graphics.LabelSelection.radius` attribute.</span>
+<span class="sd">        This will specify the angle, in degrees, along a standard unit circle centered at the label&#39;s base position</span>
+<span class="sd">        (see :meth:`~graphics.LabelSelection.pos`).</span>
+
+<span class="sd">        Additionally, this will affect the rotation of the label, if enabled (see :meth:`~graphics.LabelSelection.rotate`).</span>
+
+<span class="sd">        :param angle: The polar angle, in degrees, increasing counter-clockwise from the x-axis.</span>
+<span class="sd">        :type angle: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;angle&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.rotate"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">rotate</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets whether or not the label should rotate, using its :meth:`~graphics.LabelSelection.angle` attribute. The exact rotation</span>
+<span class="sd">        will also depend on the label&#39;s alignment. For example, an alignment of &quot;top-center&quot; together with an angle of 90</span>
+<span class="sd">        degrees will result in the text being upside-down.</span>
+
+<span class="sd">        :param rotate: Whether or not the label should rotate.</span>
+<span class="sd">        :type rotate: :data:`~graphics.types.ElementArg`\\[bool]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;rotate&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.color"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.color">[docs]</a>    <span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the color of the label&#39;s text. The default color is &quot;gray&quot;.</span>
+
+<span class="sd">        :param color: A CSS color string.</span>
+<span class="sd">        :type color: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.font"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.font">[docs]</a>    <span class="k">def</span> <span class="nf">font</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">font</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the font of the label&#39;s text.</span>
+
+<span class="sd">        :param font: A CSS font-family string.</span>
+<span class="sd">        :type font: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.size"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the size of the label&#39;s text.</span>
+
+<span class="sd">        :param size: The size of the label&#39;s text, in pixels.</span>
+<span class="sd">        :type size: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="LabelSelection.svgattr"><a class="viewcode-back" href="../../graphics/selections.html#graphics.LabelSelection.svgattr">[docs]</a>    <span class="k">def</span> <span class="nf">svgattr</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets a custom SVG attribute on the label&#39;s text.</span>
+
+<span class="sd">        :param key: The name of the SVG attribute.</span>
+<span class="sd">        :type key: str</span>
+
+<span class="sd">        :param value: The value of the SVG attribute.</span>
+<span class="sd">        :type value: :data:`~graphics.types.ElementArg`\\[Union[str, int, float, None]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;svgattr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">d</span><span class="p">}}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

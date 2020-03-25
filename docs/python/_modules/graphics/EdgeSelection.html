@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>graphics.EdgeSelection &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>graphics.EdgeSelection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for graphics.EdgeSelection</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">from</span> <span class="nn">.Selection</span> <span class="kn">import</span> <span class="n">Selection</span>
+<span class="kn">from</span> <span class="nn">.LabelSelection</span> <span class="kn">import</span> <span class="n">LabelSelection</span>
+<span class="kn">from</span> <span class="nn">.context</span> <span class="kn">import</span> <span class="n">create_child_context</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">ElementArg</span><span class="p">,</span> <span class="n">NumExpr</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">attr_event</span><span class="p">,</span> <span class="n">update_animation</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;EdgeSelection&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EdgeSelection"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection">[docs]</a><span class="k">class</span> <span class="nc">EdgeSelection</span><span class="p">(</span><span class="n">Selection</span><span class="p">):</span>
+<div class="viewcode-block" id="EdgeSelection.traverse"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.traverse">[docs]</a>    <span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ElementArg</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the selection&#39;s animation type such that color (:meth:`~graphics.EdgeSelection.color`) is animated with a traversal,</span>
+<span class="sd">        and configures the node at which the traversal should begin.</span>
+
+<span class="sd">        If no source is given, the first node in each edge tuple used to construct the selection will be used.</span>
+<span class="sd">        If the source is not connected, the edge&#39;s actual source will be used.</span>
+
+<span class="sd">        :param source: The ID of the node at which the traversal animation should begin,</span>
+<span class="sd">            which will be converted to a string.</span>
+<span class="sd">        :type source: Optional[:data:`~graphics.types.ElementArg`\\[Any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">new_source</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">initattr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">source</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="n">update_animation</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">new_source</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;traverse&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)}})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EdgeSelection.label"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.label">[docs]</a>    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LabelSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects a single label, attached to the edge, by its ID.</span>
+
+<span class="sd">        :param id: The ID of the label, which will be converted to a string. Defaults to &quot;weight&quot;.</span>
+<span class="sd">        :type id: Any</span>
+
+<span class="sd">        :return: A new selection corresponding to the given label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">([</span><span class="nb">id</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.labels"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.labels">[docs]</a>    <span class="k">def</span> <span class="nf">labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">LabelSelection</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects multiple labels, attached to the edge, using a list of ID values.</span>
+
+<span class="sd">        :param ids: An iterable container of label IDs, which will be converted to strings.</span>
+<span class="sd">        :type ids: Iterable[Any]</span>
+
+<span class="sd">        :return: A new selection corresponding to the given labels.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">label_context</span> <span class="o">=</span> <span class="n">create_child_context</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;labels&#39;</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LabelSelection</span><span class="p">(</span><span class="n">label_context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.directed"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.directed">[docs]</a>    <span class="k">def</span> <span class="nf">directed</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">directed</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets whether or not the edge should include an arrow pointing towards its target node.</span>
+
+<span class="sd">        :param directed: True if the edge should be directed, false otherwise.</span>
+<span class="sd">        :type directed: :data:`~graphics.types.ElementArg`\\[bool]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">directed</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;directed&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.length"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.length">[docs]</a>    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the length of the edge. This will only take effect when :meth:`~graphics.CanvasSelection.edgelengths` is set to &quot;individual&quot;.</span>
+
+<span class="sd">        :param length: The length of the edge.</span>
+<span class="sd">        :type length: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.thickness"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.thickness">[docs]</a>    <span class="k">def</span> <span class="nf">thickness</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">thickness</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the thickness of the edge.</span>
+
+<span class="sd">        :param thickness: The thickness of the edge.</span>
+<span class="sd">        :type thickness: :data:`~graphics.types.ElementArg`\\[:data:`~graphics.types.NumExpr`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;thickness&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.color"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.color">[docs]</a>    <span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets color of the edge. Note that this can be animated with a traversal animation (see :meth:`~traverse`).</span>
+<span class="sd">        The default color is &quot;light-gray&quot;.</span>
+
+<span class="sd">        :param color: A CSS color string.</span>
+<span class="sd">        :type color: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.flip"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.flip">[docs]</a>    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">flip</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets whether or not the edge should be &#39;flipped&#39; after exceeding a certain angle, such that it is never rendered</span>
+<span class="sd">        upside-down. This only applies to edges connecting two nodes.</span>
+
+<span class="sd">        :param flip: True if the edge should flip automatically, false otherwise.</span>
+<span class="sd">        :type flip: :data:`~graphics.types.ElementArg`\\[bool]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">flip</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;flip&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.curve"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.curve">[docs]</a>    <span class="k">def</span> <span class="nf">curve</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">curve</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the curve function used to interpolate the edge&#39;s path. The default setting is &quot;cardinal&quot;. More</span>
+<span class="sd">        information is available here: `&lt;https://github.com/d3/d3-shape#curves&gt;`_.</span>
+
+<span class="sd">        :param curve: The name of the curve function, based on the functions found in D3. The full list is below:</span>
+
+<span class="sd">            &quot;basis&quot;,</span>
+<span class="sd">            &quot;bundle&quot;,</span>
+<span class="sd">            &quot;cardinal&quot;,</span>
+<span class="sd">            &quot;catmull-rom&quot;,</span>
+<span class="sd">            &quot;linear&quot;,</span>
+<span class="sd">            &quot;monotone-x&quot;,</span>
+<span class="sd">            &quot;monotone-y&quot;,</span>
+<span class="sd">            &quot;natural&quot;,</span>
+<span class="sd">            &quot;step&quot;, &quot;step-before&quot;, &quot;step-after&quot;</span>
+
+<span class="sd">        :type curve: :data:`~graphics.types.ElementArg`\\[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">curve</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;curve&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.path"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.path">[docs]</a>    <span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">NumExpr</span><span class="p">,</span> <span class="n">NumExpr</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets a custom path for the edge. The path is a list of (x, y) tuples, relative to the edge&#39;s origin, which will</span>
+<span class="sd">        automatically connect to the boundaries of the source and target nodes.</span>
+
+<span class="sd">        If the edge connects two nodes, (0, 0) will be the midpoint between the two nodes. If edge is a looping edge</span>
+<span class="sd">        connecting one node, (0, 0) will be a point along the node&#39;s boundary, in the direction of the edge.</span>
+
+<span class="sd">        :param path: An iterable container of (x, y) tuples.</span>
+<span class="sd">        :type path: :data:`~graphics.types.ElementArg`\\[Iterable[Tuple[:data:`~graphics.types.NumExpr`, :data:`~graphics.types.NumExpr`]]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">)}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EdgeSelection.svgattr"><a class="viewcode-back" href="../../graphics/selections.html#graphics.EdgeSelection.svgattr">[docs]</a>    <span class="k">def</span> <span class="nf">svgattr</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets a custom SVG attribute on the edge&#39;s path.</span>
+
+<span class="sd">        :param key: The name of the SVG attribute.</span>
+<span class="sd">        :type key: str</span>
+
+<span class="sd">        :param value: The value of the SVG attribute.</span>
+<span class="sd">        :type value: :data:`~graphics.types.ElementArg`\\[Union[str, int, float, None]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;svgattr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">d</span><span class="p">}}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

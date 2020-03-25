@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTTP Server &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="_static/index.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Jupyter Widget" href="jupyter-widget.html" />
+    <link rel="prev" title="Installation" href="installing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>HTTP Server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/http-server.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="http-server">
+<span id="id1"></span><h1>HTTP Server<a class="headerlink" href="#http-server" title="Permalink to this headline">¶</a></h1>
+<p>To use the library normally (i.e. not through Jupyter), you will need to set up a local server for displaying the
+interactive network. The library comes with all the tools needed to do this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">algorithmx</span>
+
+<span class="c1"># Create a new HTTP server</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">http_server</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">5050</span><span class="p">)</span>
+<span class="c1"># Create a CanvasSelection interface</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">canvas</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="c1"># Use the library normally, for example:</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+    <span class="n">canvas</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">highlight</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="s1">&#39;1.5x&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s1">&#39;traverse&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Call the function above when the client broadcasts a &#39;start&#39; message</span>
+<span class="c1"># (which will happen when the user clicks the start or restart button)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
+
+<span class="c1"># Start the server, blocking all further execution on the current thread</span>
+<span class="c1"># You can press &#39;CTRL-C&#39; to exit the script</span>
+<span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>After running this code, open a browser and go to the address <code class="docutils literal notranslate"><span class="pre">http://localhost:5050/</span></code> to see the network. The library
+provides a simple HTML interface with buttons for starting, stopping and restarting the simulation. If you wish to
+customize this further, you can tell the server to open a different HTML file, and configure the port:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">http_server</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;my/custom/interface.html&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8090</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the provided HTML file as a guide for creating your own.</p>
+<span class="target" id="module-algorithmx"></span><dl class="function">
+<dt id="algorithmx.http_server">
+<code class="sig-prename descclassname">algorithmx.</code><code class="sig-name descname">http_server</code><span class="sig-paren">(</span><em class="sig-param">file: str = None</em>, <em class="sig-param">port: int = 5050</em><span class="sig-paren">)</span> &#x2192; algorithmx.server.Server.Server<a class="reference internal" href="_modules/algorithmx/main.html#http_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.http_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new HTTP server for displaying the network, using WebSockets to transmit data. The server will only start
+once its <a class="reference internal" href="#algorithmx.server.Server.start" title="algorithmx.server.Server.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a> method is called. After the server has started, the network can be viewed by
+opening a browser and navigating to the address <code class="docutils literal notranslate"><span class="pre">http://localhost:5050/</span></code> (change the port as necessary).</p>
+<dl class="field-list simple">
+<dt class="field-odd">File</dt>
+<dd class="field-odd"><p>(Optional) The path to the HTML file which the server should display, relative to the current runtime directory.
+If unspecified, the default HTML file will be used. When creating a custom HTML interface, use the default file
+as a guide.</p>
+</dd>
+<dt class="field-even">Port</dt>
+<dd class="field-even"><p>(Optional) The port on which the server should start, defaulting to to 5050. Note that the next port
+(by default 5051) will also be used to transmit data through WebSockets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="algorithmx.server.Server">
+<em class="property">class </em><code class="sig-prename descclassname">algorithmx.server.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param">file: str</em>, <em class="sig-param">port: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/algorithmx/server/Server.html#Server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>A local HTTP server using WebSockets to transmit data.</p>
+<dl class="method">
+<dt id="algorithmx.server.Server.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/algorithmx/server/Server.html#Server.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the server on the current threat, blocking all further execution until the server shuts down.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="algorithmx.server.Server.shutdown">
+<code class="sig-name descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/algorithmx/server/Server.html#Server.shutdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shuts down the server. This must be called on a different thread to the one used to start the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="algorithmx.server.Server.canvas">
+<code class="sig-name descname">canvas</code><span class="sig-paren">(</span><em class="sig-param">name: str = 'output'</em><span class="sig-paren">)</span> &#x2192; algorithmx.graphics.CanvasSelection.CanvasSelection<a class="reference internal" href="_modules/algorithmx/server/Server.html#Server.canvas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server.canvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="graphics/selections.html#graphics.CanvasSelection" title="graphics.CanvasSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanvasSelection</span></code></a> which will dispatch and receive events through a WebSocket
+connected to the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – (Optional) The name of the canvas. By default, each server will only render one canvas, and so
+this argument has no affect. However, if you wish to design a custom interface with more than one canvas
+per page, you can use this to differentiate between them.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="jupyter-widget.html" class="btn btn-neutral float-right" title="Jupyter Widget" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installing.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

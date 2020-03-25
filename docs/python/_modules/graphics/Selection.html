@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>graphics.Selection &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Notebooks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>graphics.Selection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for graphics.Selection</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+
+<span class="kn">from</span> <span class="nn">.context</span> <span class="kn">import</span> <span class="n">SelectionContext</span><span class="p">,</span> <span class="n">create_child_context</span>
+<span class="kn">from</span> <span class="nn">.EventHandler</span> <span class="kn">import</span> <span class="n">DispatchEventType</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">attr_event</span><span class="p">,</span> <span class="n">queue_event</span><span class="p">,</span> <span class="n">update_animation</span><span class="p">,</span> <span class="n">call_element_fn</span><span class="p">,</span> <span class="n">is_iterable</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">ElementArg</span><span class="p">,</span> <span class="n">ElementFn</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;Selection&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Selection"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection">[docs]</a><span class="k">class</span> <span class="nc">Selection</span><span class="p">:</span>
+    <span class="n">_context</span><span class="p">:</span> <span class="n">SelectionContext</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SelectionContext</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span> <span class="o">=</span> <span class="n">context</span>
+
+<div class="viewcode-block" id="Selection.add"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds all elements in the current selection to the canvas. This should be called immediately after a</span>
+<span class="sd">        selection of new elements is created. If the selection contains multiple elements, they will not necessarily be</span>
+<span class="sd">        added in order.</span>
+
+<span class="sd">        :return: A new instance of the current selection with animations disabled, allowing initial attributes to be</span>
+<span class="sd">            configured.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">ids</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="o">**</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">initattr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">initattr</span> <span class="k">else</span> <span class="p">{})</span>
+        <span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.remove"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Removes all elements in the current selection from the canvas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.set"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">attrs</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets one or more custom attributes on all elements in the current selection. The attributes are provided using</span>
+<span class="sd">        a dictionary, where each (key, value) pair corresponds to the method and argument setting the same attribute.</span>
+<span class="sd">        Keyword arguments can also be used in the same way. For example:</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            node.color(&#39;red&#39;).size((20, 30)).svgattr(&#39;stroke&#39;, &#39;blue&#39;)</span>
+<span class="sd">            # is equivalent to</span>
+<span class="sd">            node.set(color = &#39;red&#39;,</span>
+<span class="sd">                     size = (20, 30),</span>
+<span class="sd">                     svgattr = {</span>
+<span class="sd">                        &#39;stroke&#39;: &#39;blue&#39;</span>
+<span class="sd">                     })</span>
+
+<span class="sd">        :param attrs: (Optional) A dictionary of custom attributes.</span>
+<span class="sd">        :type attrs: :data:`~graphics.types.ElementArg`\\[Dict[str, Any]]</span>
+
+<span class="sd">        :param kwargs: Custom attributes as keywork arguments.</span>
+<span class="sd">        :type kwargs: Dict[str, Any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="o">**</span><span class="n">d</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.visible"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.visible">[docs]</a>    <span class="k">def</span> <span class="nf">visible</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">visible</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets whether or not the elements in the current selection should be visible. This can be animated in the same way</span>
+<span class="sd">        as additions and removals. However, in contrast to removing, disabling visibility will not clear attributes or</span>
+<span class="sd">        affect layout.</span>
+
+<span class="sd">        :param visible: Whether or not the elements should be visible.</span>
+<span class="sd">        :type bool: :data:`~graphics.types.ElementArg`\\[bool]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">attr_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">visible</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.eventQ"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.eventQ">[docs]</a>    <span class="k">def</span> <span class="nf">eventQ</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the queue onto which all events triggered by the selection should be added. Each queue handles events</span>
+<span class="sd">        independently, and all queues execute in parallel. Since queues can be delayed (see :meth:`pause`), this</span>
+<span class="sd">        effectively enables multiple animations to run simultaneously.</span>
+
+<span class="sd">        The ``None`` queue is special; all events added to it will execute immediately. The default queue is named &quot;default&quot;.</span>
+
+<span class="sd">        :param queue: The ID of the queue, which will be converted to a string, or ``None`` for the immediate queue.</span>
+<span class="sd">            Defaults to &quot;default&quot;.</span>
+<span class="sd">        :type queue: Union[Any, None]</span>
+
+<span class="sd">        :return: A new instance of the current selection using the specified event queue.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.duration"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.duration">[docs]</a>    <span class="k">def</span> <span class="nf">duration</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Configures the duration of all animations triggered by the selection. A duration of ``0`` will ensure that changes</span>
+<span class="sd">        occur immediately. The default duration is ``0.5``.</span>
+
+<span class="sd">        :param seconds: The animation duration, in seconds.</span>
+<span class="sd">        :type seconds: :data:`~graphics.types.ElementArg`\\[Union[int, float]]</span>
+
+<span class="sd">        :return: A new instance of the current selection using the specified animation duration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="n">update_animation</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.ease"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.ease">[docs]</a>    <span class="k">def</span> <span class="nf">ease</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">ease</span><span class="p">:</span> <span class="n">ElementArg</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Configures the ease function used in all animations triggered by the selection. This will affect the way attributes</span>
+<span class="sd">        transition from one value to another. More information is available here: `&lt;https://github.com/d3/d3-ease&gt;`_.</span>
+
+<span class="sd">        :param ease: The name of the ease function, based on the functions found in D3. The full list is below:</span>
+
+<span class="sd">            &quot;linear&quot;,</span>
+<span class="sd">            &quot;poly&quot;, &quot;poly-in&quot;, &quot;poly-out&quot;, &quot;poly-in-out&quot;,</span>
+<span class="sd">            &quot;quad&quot;, &quot;quad-in&quot;, &quot;quad-out&quot;, &quot;quad-in-out&quot;,</span>
+<span class="sd">            &quot;cubic&quot;, &quot;cubic-in&quot;, &quot;cubic-out&quot;, &quot;cubic-in-out&quot;,</span>
+<span class="sd">            &quot;sin&quot;, &quot;sin-in&quot;, &quot;sin-out&quot;, &quot;sin-in-out&quot;,</span>
+<span class="sd">            &quot;exp&quot;, &quot;exp-in&quot;, &quot;exp-out&quot;, &quot;exp-in-out&quot;,</span>
+<span class="sd">            &quot;circle&quot;, &quot;circle-in&quot;, &quot;circle-out&quot;, &quot;circle-in-out&quot;,</span>
+<span class="sd">            &quot;elastic&quot;, &quot;elastic-in&quot;, &quot;elastic-out&quot;, &quot;elastic-in-out&quot;,</span>
+<span class="sd">            &quot;back&quot;, &quot;back-in&quot;, &quot;back-out&quot;, &quot;back-in-out&quot;,</span>
+<span class="sd">            &quot;bounce&quot;, &quot;bounce-in&quot;, &quot;bounce-out&quot;, &quot;bounce-in-out&quot;.</span>
+
+<span class="sd">        :type ease: :data:`~graphics.types.ElementArg`\\[str]</span>
+
+<span class="sd">        :return: A new instance of the current selection using the specified animation ease.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="n">update_animation</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">ease</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ease&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.highlight"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.highlight">[docs]</a>    <span class="k">def</span> <span class="nf">highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ElementArg</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a new selection through which all attribute changes are temporary. This is typically used to draw attention</span>
+<span class="sd">        to a certain element without permanently changing its attributes.</span>
+
+<span class="sd">        :param seconds: The amount of time attributes should remain &#39;highlighted&#39;, in seconds, before</span>
+<span class="sd">            changing back to their original values. Defaults to ``0.5``.</span>
+<span class="sd">        :type seconds: Optional[:data:`~graphics.types.ElementArg`\\[Union[int, float]]]</span>
+
+<span class="sd">        :return: A new instance of the current selection, where all attribute changes are temporary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">highlight</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">seconds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="n">update_animation</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;linger&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.data"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.data">[docs]</a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">ElementFn</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Binds the selection to a list of data values. This will decide the arguments provided whenever an attribute is</span>
+<span class="sd">        configured using a function (see :data:`~graphics.types.ElementArg`).</span>
+
+<span class="sd">        :param data: An iterable container of values to use as the data of this selection, which should have the same length as the number</span>
+<span class="sd">            of elements in the selection. Alternatively, a function (:data:`~graphics.types.ElementFn`) transforming the selection&#39;s previous data.</span>
+<span class="sd">            Use ``null`` to unbind the selection from its data, in which case the selection will fall back on its parent&#39;s data.</span>
+<span class="sd">        :type: data: Union[Iterable[Any], ElementFn[Any]]</span>
+
+<span class="sd">        :raise Exception: If the length of the data does not equal the number of elements in the selection.</span>
+
+<span class="sd">        :return: A new instance of the current selection bound to the given data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">is_iterable</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">data_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">ids</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">((</span><span class="s1">&#39;data length (</span><span class="si">{}</span><span class="s1">) must equal the number of elements&#39;</span>
+                <span class="o">+</span> <span class="s1">&#39; in the selection (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">ids</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">ids</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">call_element_fn</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data_list</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Selection.pause"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.pause">[docs]</a>    <span class="k">def</span> <span class="nf">pause</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a pause to the event queue, delaying the next event by the given number of seconds.</span>
+
+<span class="sd">        :param seconds: The duration of the pause, in seconds.</span>
+<span class="sd">        :type seconds: Union[int, float]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">DispatchEventType</span><span class="o">.</span><span class="n">Pause</span><span class="p">,</span>
+            <span class="s1">&#39;queue&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">seconds</span><span class="p">}</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.stop"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Stops the execution of all scheduled events on the given event queue.</span>
+<span class="sd">        Note that this will still be added as an event onto the current queue.</span>
+
+<span class="sd">        :param queue: The ID of the queue to stop, which will be converted to a string.</span>
+<span class="sd">        :type queue: Any</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.stopall"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.stopall">[docs]</a>    <span class="k">def</span> <span class="nf">stopall</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Stops the execution of all scheduled events on all event queues.</span>
+<span class="sd">        Note this will still be added as an event onto the current queue.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.start"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Starts/resumes the execution of all scheduled events on the given event queue.</span>
+<span class="sd">        Note this will still be added as an event onto the current queue.</span>
+
+<span class="sd">        :param queue: The name of the queue to start, or an iterable container of names. Defaults to &quot;default&quot;.</span>
+<span class="sd">        :type queue: Any</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.startall"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.startall">[docs]</a>    <span class="k">def</span> <span class="nf">startall</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Starts/resumes the execution of all scheduled events on all event queues.</span>
+<span class="sd">        Note that this will still be added as an event onto the current queue.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.cancel"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.cancel">[docs]</a>    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cancels all scheduled events on the given event queue.</span>
+<span class="sd">        Note this will still be added as an event onto the current queue.</span>
+
+<span class="sd">        :param queue: The name of the queue to cancel, or an iterable container of names. Defaults to &quot;default&quot;.</span>
+<span class="sd">        :type queue: Any</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;cancel&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.cancelall"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.cancelall">[docs]</a>    <span class="k">def</span> <span class="nf">cancelall</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cancels all scheduled events on all event queues.</span>
+<span class="sd">        Note that this will still be added as an event onto the current queue.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">queue_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="s1">&#39;cancel&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.broadcast"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.broadcast">[docs]</a>    <span class="k">def</span> <span class="nf">broadcast</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a message to the event queue, which will trigger a corresponding listener (see :meth:`~graphics.Selection.listen`).</span>
+<span class="sd">        This can be used to detect when a queue reaches a certain point in execution, or to enable communication between</span>
+<span class="sd">        a server.</span>
+
+<span class="sd">        :param message: The message.</span>
+<span class="sd">        :type message: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">DispatchEventType</span><span class="o">.</span><span class="n">Broadcast</span><span class="p">,</span>
+            <span class="s1">&#39;queue&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;broadcast-&#39;</span> <span class="o">+</span> <span class="n">message</span><span class="p">}</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.listen"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.listen">[docs]</a>    <span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">on_receive</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Registers a function to listen for a specific broadcast message (see :meth:`~graphics.Selection.broadcast`). The function will</span>
+<span class="sd">        be called when the corresponding broadcast event is processed by the event queue. If the same message is broadcast</span>
+<span class="sd">        multiple times, the function will be called each time. This will also override any previous function listening for</span>
+<span class="sd">        the same message.</span>
+
+<span class="sd">        :param message: The message to listen for.</span>
+<span class="sd">        :type message: str</span>
+
+<span class="sd">        :param on_receive: The function to call when the message is received.</span>
+<span class="sd">        :type on_receive: Callable</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">listeners</span><span class="p">[</span><span class="s1">&#39;broadcast-&#39;</span> <span class="o">+</span> <span class="n">message</span><span class="p">]</span> <span class="o">=</span> <span class="n">on_receive</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Selection.callback"><a class="viewcode-back" href="../../graphics/selections.html#graphics.Selection.callback">[docs]</a>    <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span> <span class="n">on_callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a callback to the event queue. This is roughly equivalent to broadcasting a unique message and setting up</span>
+<span class="sd">        a corresponding listener. The callback function is guaranteed to only execute once.</span>
+
+<span class="sd">        :param on_callback: The function to call when the callback event is processed by the event queue.</span>
+<span class="sd">        :type on_callback: Callable</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;callback-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">listeners</span><span class="p">[</span><span class="n">message</span><span class="p">]</span> <span class="o">=</span> <span class="n">on_callback</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dispatch</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">DispatchEventType</span><span class="o">.</span><span class="n">Broadcast</span><span class="p">,</span>
+            <span class="s1">&#39;queue&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NetworkX Tutorial &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Install" href="../dev-install.html" />
+    <link rel="prev" title="NetworkX Examples" href="networkx-examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">Notebooks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html">Basic Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkx-examples.html">NetworkX Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NetworkX Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-graph">Simple Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#random-graph">Random Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detailed-graph">Detailed Graph</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="examples.html">Notebooks</a> &raquo;</li>
+        
+      <li>NetworkX Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/networkx-tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="networkx-tutorial">
+<span id="id1"></span><h1>NetworkX Tutorial<a class="headerlink" href="#networkx-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will take a look at ways of combining the analysis tools provided by NetworkX with the visualization capailities of AlgorithmX.</p>
+<div class="section" id="simple-graph">
+<h2>Simple Graph<a class="headerlink" href="#simple-graph" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by creating a simple NetworkX graph. We will use add_path to quickly add both nodes and edges.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">add_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">add_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nodes:&#39;</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Edges:&#39;</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Nodes: [1, 2, 3, 4, 5]
+Edges: [(1, 2), (2, 3), (2, 4), (2, 5)]
+</pre></div>
+</div>
+</div>
+<p>Now that we have all the data we need, we can create an AlgorithmX canvas to display our nodes and edges.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">algorithmx</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "1425163b2c5b477ebe6e97af70cabbd3"}
+</script></div>
+<p>So we have our simple graph, but we think it could look a little more interesting. Let’s define a custom style for our nodes, and also give each one a different color. We can take advantage of the fact that nearly any argument in AlgorithmX can be passed as a lambda function, making our code much more concise.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">node_style</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rect&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">}</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">node_style</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">node_colors</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "d506f1c7edf04ac28c47d93e61254391"}
+</script></div>
+<p>Making the graph directed is easy - all we have to do is call G.to_directed(), and then tell AlgorithmX that the edges should be rendered with an arrow.</p>
+<p>Weighted and Directed Graphs
+To create a directed graph, all we need to do is use a NetworkX DiGraph, and tell AlgrithmX that edges should be rendered with an arrow.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span><span class="o">.</span><span class="n">directed</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "81d88aec7e064adaa064a58cb988816c"}
+</script></div>
+<p>To create wighted graph, we will first ensure that our NetworkX edges have a ‘weight’ attribute. Then, we will add a label to each edge displaying the attribute.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)])</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">label</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5043c6d4ad5d446e81449eb390374545"}
+</script></div>
+<p>Finally, AlgorithmX provides a uility to simplify this process.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">algorithmx.networkx</span> <span class="kn">import</span> <span class="n">add_graph</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)])</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">add_graph</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "e526808c17094be18a38042d660bea13"}
+</script></div>
+</div>
+<div class="section" id="random-graph">
+<h2>Random Graph<a class="headerlink" href="#random-graph" title="Permalink to this headline">¶</a></h2>
+<p>NetworkX provides a range of functions for generating graphs. For generating a random graph, we will use the basic gnp_random_graph function. By providing a seed, we can ensure that we get the same graph every time (otherwise there is no guarantee of it being connected!).</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">138</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "3f5c63da26654cd7ae430f53d475b7f6"}
+</script></div>
+<p>To make the graph directed, we will simply use G.to_directed. To make the graph weighted, we will need to configure a weight attribute for each edge. Since our graph is random, we’ll make our edge weights random as well. For this we will use the set_edge_attributes function.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">to_directed</span><span class="p">()</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">{</span><span class="n">e</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>We can now display the graph using the utility from before.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+<span class="n">add_graph</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "b28c7cce3aaa49159baaeca11b969245"}
+</script></div>
+</div>
+<div class="section" id="detailed-graph">
+<h2>Detailed Graph<a class="headerlink" href="#detailed-graph" title="Permalink to this headline">¶</a></h2>
+<p>Now we are going to create a graph that displays a range of interesting properties. Let’s begin by generating a random weighted graph, as before.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">{</span><span class="n">e</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>Next, we will use NetworkX to calculate the graph’s coloring and edge centrality.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coloring</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">greedy_color</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">edge_betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We can now begin displaying the graph. First, we will add the nodes and assign them a color based on their calculated priority. We happen to know that any graph requires at most 4 different colors, and so we prepare these beforehand.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+
+<span class="n">color_priority</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">color_priority</span><span class="p">[</span><span class="n">coloring</span><span class="p">[</span><span class="n">n</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">coloring</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{4: 0, 2: 1, 3: 2, 0: 1, 1: 2, 6: 0, 8: 1, 7: 2, 9: 2, 5: 0}
+</pre></div>
+</div>
+</div>
+<p>Afterwards, we will add the edges. Each one will have two labels; one to display it’s weight, and another to display it’s calculated centrality.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">init_edges</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">formatted_centrality</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">centrality</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="n">init_edges</span><span class="o">.</span><span class="n">label</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span> \
+
+<span class="n">init_edges</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;centrality&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">formatted_centrality</span><span class="p">[</span><span class="n">e</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">formatted_centrality</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{(0, 1): &#39;0.02&#39;, (0, 3): &#39;0.11&#39;, (0, 4): &#39;0.07&#39;, (1, 4): &#39;0.18&#39;, (1, 8): &#39;0.00&#39;, (2, 3): &#39;0.40&#39;, (2, 4): &#39;0.00&#39;, (2, 5): &#39;0.20&#39;, (2, 6): &#39;0.04&#39;, (2, 7): &#39;0.18&#39;, (3, 4): &#39;0.44&#39;, (3, 6): &#39;0.13&#39;, (4, 8): &#39;0.20&#39;, (4, 9): &#39;0.20&#39;, (6, 7): &#39;0.02&#39;, (8, 9): &#39;0.00&#39;}
+</pre></div>
+</div>
+</div>
+<p>Finally, we can see the whole graph.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "66b06aa75d16461989fe32f7a85a4abe"}
+</script></div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"e232faa315ca4843b9d4b499de80ed4b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1425163b2c5b477ebe6e97af70cabbd3": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"2-4\": {\"visible\": true, \"source\": \"2\", \"target\": \"4\"}, \"2-5\": {\"visible\": true, \"source\": \"2\", \"target\": \"5\"}}}, \"animation\": {}}}"], "layout": "IPY_MODEL_e232faa315ca4843b9d4b499de80ed4b", "show_buttons": false}}, "0789a81d7c064447b714aa3142207c53": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d506f1c7edf04ac28c47d93e61254391": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"shape\": \"rect\", \"size\": [20, 12]}, \"2\": {\"shape\": \"rect\", \"size\": [20, 12]}, \"3\": {\"shape\": \"rect\", \"size\": [20, 12]}, \"4\": {\"shape\": \"rect\", \"size\": [20, 12]}, \"5\": {\"shape\": \"rect\", \"size\": [20, 12]}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"color\": \"red\"}, \"2\": {\"color\": \"green\"}, \"3\": {\"color\": \"blue\"}, \"4\": {\"color\": \"orange\"}, \"5\": {\"color\": \"purple\"}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"2-4\": {\"visible\": true, \"source\": \"2\", \"target\": \"4\"}, \"2-5\": {\"visible\": true, \"source\": \"2\", \"target\": \"5\"}}}, \"animation\": {}}}"], "layout": "IPY_MODEL_0789a81d7c064447b714aa3142207c53", "show_buttons": false}}, "1d55cc93cecf433199463d204d83cd3c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "81d88aec7e064adaa064a58cb988816c": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"1-3\": {\"visible\": true, \"source\": \"3\", \"target\": \"1\"}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"directed\": true}, \"2-3\": {\"directed\": true}, \"1-3\": {\"directed\": true}}}, \"animation\": {\"**\": {\"duration\": 0}}}}"], "layout": "IPY_MODEL_1d55cc93cecf433199463d204d83cd3c", "show_buttons": false}}, "8a005435b3974389982ff5bcd94cccee": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5043c6d4ad5d446e81449eb390374545": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"1-3\": {\"visible\": true, \"source\": \"1\", \"target\": \"3\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"1-3\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-3\": {\"labels\": {\"weight\": {\"visible\": true}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"labels\": {\"weight\": {\"text\": 0.4}}}, \"1-3\": {\"labels\": {\"weight\": {\"text\": 0.3}}}, \"2-3\": {\"labels\": {\"weight\": {\"text\": 0.2}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}"], "layout": "IPY_MODEL_8a005435b3974389982ff5bcd94cccee", "show_buttons": false}}, "ef235c9b835c4100b292ee5a4f5425af": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e526808c17094be18a38042d660bea13": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"1-3\": {\"visible\": true, \"source\": \"3\", \"target\": \"1\"}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"directed\": true}, \"2-3\": {\"directed\": true}, \"1-3\": {\"directed\": true}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-3\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"1-3\": {\"labels\": {\"weight\": {\"visible\": true}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"labels\": {\"weight\": {\"text\": 0.4}}}, \"2-3\": {\"labels\": {\"weight\": {\"text\": 0.2}}}, \"1-3\": {\"labels\": {\"weight\": {\"text\": 0.3}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}"], "layout": "IPY_MODEL_ef235c9b835c4100b292ee5a4f5425af", "show_buttons": false}}, "6c410df39de949c8bc513c81a6d1975a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3f5c63da26654cd7ae430f53d475b7f6": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"0\": {\"visible\": true}, \"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}, \"6\": {\"visible\": true}, \"7\": {\"visible\": true}, \"8\": {\"visible\": true}, \"9\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"visible\": true, \"source\": \"0\", \"target\": \"1\"}, \"0-4\": {\"visible\": true, \"source\": \"0\", \"target\": \"4\"}, \"0-6\": {\"visible\": true, \"source\": \"0\", \"target\": \"6\"}, \"0-7\": {\"visible\": true, \"source\": \"0\", \"target\": \"7\"}, \"1-9\": {\"visible\": true, \"source\": \"1\", \"target\": \"9\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"2-5\": {\"visible\": true, \"source\": \"2\", \"target\": \"5\"}, \"2-8\": {\"visible\": true, \"source\": \"2\", \"target\": \"8\"}, \"2-9\": {\"visible\": true, \"source\": \"2\", \"target\": \"9\"}, \"3-4\": {\"visible\": true, \"source\": \"3\", \"target\": \"4\"}, \"3-6\": {\"visible\": true, \"source\": \"3\", \"target\": \"6\"}, \"6-7\": {\"visible\": true, \"source\": \"6\", \"target\": \"7\"}, \"7-8\": {\"visible\": true, \"source\": \"7\", \"target\": \"8\"}, \"7-9\": {\"visible\": true, \"source\": \"7\", \"target\": \"9\"}}}, \"animation\": {}}}"], "layout": "IPY_MODEL_6c410df39de949c8bc513c81a6d1975a", "show_buttons": false}}, "6b43540027cb4373ad19a9fa96122c4f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b28c7cce3aaa49159baaeca11b969245": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"0\": {\"visible\": true}, \"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}, \"6\": {\"visible\": true}, \"7\": {\"visible\": true}, \"8\": {\"visible\": true}, \"9\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"visible\": true, \"source\": \"1\", \"target\": \"0\"}, \"0-4\": {\"visible\": true, \"source\": \"4\", \"target\": \"0\"}, \"0-6\": {\"visible\": true, \"source\": \"6\", \"target\": \"0\"}, \"0-7\": {\"visible\": true, \"source\": \"7\", \"target\": \"0\"}, \"1-9\": {\"visible\": true, \"source\": \"9\", \"target\": \"1\"}, \"2-3\": {\"visible\": true, \"source\": \"3\", \"target\": \"2\"}, \"2-5\": {\"visible\": true, \"source\": \"5\", \"target\": \"2\"}, \"2-8\": {\"visible\": true, \"source\": \"8\", \"target\": \"2\"}, \"2-9\": {\"visible\": true, \"source\": \"9\", \"target\": \"2\"}, \"3-4\": {\"visible\": true, \"source\": \"4\", \"target\": \"3\"}, \"3-6\": {\"visible\": true, \"source\": \"6\", \"target\": \"3\"}, \"6-7\": {\"visible\": true, \"source\": \"7\", \"target\": \"6\"}, \"7-8\": {\"visible\": true, \"source\": \"8\", \"target\": \"7\"}, \"7-9\": {\"visible\": true, \"source\": \"9\", \"target\": \"7\"}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"directed\": true}, \"0-4\": {\"directed\": true}, \"0-6\": {\"directed\": true}, \"0-7\": {\"directed\": true}, \"1-9\": {\"directed\": true}, \"2-3\": {\"directed\": true}, \"2-5\": {\"directed\": true}, \"2-8\": {\"directed\": true}, \"2-9\": {\"directed\": true}, \"3-4\": {\"directed\": true}, \"3-6\": {\"directed\": true}, \"6-7\": {\"directed\": true}, \"7-8\": {\"directed\": true}, \"7-9\": {\"directed\": true}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"0-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"0-6\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"0-7\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"1-9\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-3\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-5\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-8\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-9\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"3-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"3-6\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"6-7\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"7-8\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"7-9\": {\"labels\": {\"weight\": {\"visible\": true}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"weight\": {\"text\": 7}}}, \"0-4\": {\"labels\": {\"weight\": {\"text\": 8}}}, \"0-6\": {\"labels\": {\"weight\": {\"text\": 8}}}, \"0-7\": {\"labels\": {\"weight\": {\"text\": 3}}}, \"1-9\": {\"labels\": {\"weight\": {\"text\": 3}}}, \"2-3\": {\"labels\": {\"weight\": {\"text\": 4}}}, \"2-5\": {\"labels\": {\"weight\": {\"text\": 6}}}, \"2-8\": {\"labels\": {\"weight\": {\"text\": 1}}}, \"2-9\": {\"labels\": {\"weight\": {\"text\": 9}}}, \"3-4\": {\"labels\": {\"weight\": {\"text\": 1}}}, \"3-6\": {\"labels\": {\"weight\": {\"text\": 3}}}, \"6-7\": {\"labels\": {\"weight\": {\"text\": 10}}}, \"7-8\": {\"labels\": {\"weight\": {\"text\": 8}}}, \"7-9\": {\"labels\": {\"weight\": {\"text\": 8}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}"], "layout": "IPY_MODEL_6b43540027cb4373ad19a9fa96122c4f", "show_buttons": false}}, "3edfded3387f4ffbb1969b9015fa8299": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "66b06aa75d16461989fe32f7a85a4abe": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"0\": {\"visible\": true}, \"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}, \"6\": {\"visible\": true}, \"7\": {\"visible\": true}, \"8\": {\"visible\": true}, \"9\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"0\": {\"color\": \"orange\"}, \"1\": {\"color\": \"yellow\"}, \"2\": {\"color\": \"orange\"}, \"3\": {\"color\": \"yellow\"}, \"4\": {\"color\": \"red\"}, \"5\": {\"color\": \"red\"}, \"6\": {\"color\": \"red\"}, \"7\": {\"color\": \"yellow\"}, \"8\": {\"color\": \"orange\"}, \"9\": {\"color\": \"yellow\"}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"visible\": true, \"source\": \"0\", \"target\": \"1\"}, \"0-3\": {\"visible\": true, \"source\": \"0\", \"target\": \"3\"}, \"0-4\": {\"visible\": true, \"source\": \"0\", \"target\": \"4\"}, \"1-4\": {\"visible\": true, \"source\": \"1\", \"target\": \"4\"}, \"1-8\": {\"visible\": true, \"source\": \"1\", \"target\": \"8\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"2-4\": {\"visible\": true, \"source\": \"2\", \"target\": \"4\"}, \"2-5\": {\"visible\": true, \"source\": \"2\", \"target\": \"5\"}, \"2-6\": {\"visible\": true, \"source\": \"2\", \"target\": \"6\"}, \"2-7\": {\"visible\": true, \"source\": \"2\", \"target\": \"7\"}, \"3-4\": {\"visible\": true, \"source\": \"3\", \"target\": \"4\"}, \"3-6\": {\"visible\": true, \"source\": \"3\", \"target\": \"6\"}, \"4-8\": {\"visible\": true, \"source\": \"4\", \"target\": \"8\"}, \"4-9\": {\"visible\": true, \"source\": \"4\", \"target\": \"9\"}, \"6-7\": {\"visible\": true, \"source\": \"6\", \"target\": \"7\"}, \"8-9\": {\"visible\": true, \"source\": \"8\", \"target\": \"9\"}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"0-3\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"0-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"1-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"1-8\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-3\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-5\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-6\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"2-7\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"3-4\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"3-6\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"4-8\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"4-9\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"6-7\": {\"labels\": {\"weight\": {\"visible\": true}}}, \"8-9\": {\"labels\": {\"weight\": {\"visible\": true}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"weight\": {\"text\": 7}}}, \"0-3\": {\"labels\": {\"weight\": {\"text\": 8}}}, \"0-4\": {\"labels\": {\"weight\": {\"text\": 9}}}, \"1-4\": {\"labels\": {\"weight\": {\"text\": 6}}}, \"1-8\": {\"labels\": {\"weight\": {\"text\": 10}}}, \"2-3\": {\"labels\": {\"weight\": {\"text\": 2}}}, \"2-4\": {\"labels\": {\"weight\": {\"text\": 7}}}, \"2-5\": {\"labels\": {\"weight\": {\"text\": 10}}}, \"2-6\": {\"labels\": {\"weight\": {\"text\": 7}}}, \"2-7\": {\"labels\": {\"weight\": {\"text\": 4}}}, \"3-4\": {\"labels\": {\"weight\": {\"text\": 3}}}, \"3-6\": {\"labels\": {\"weight\": {\"text\": 6}}}, \"4-8\": {\"labels\": {\"weight\": {\"text\": 1}}}, \"4-9\": {\"labels\": {\"weight\": {\"text\": 4}}}, \"6-7\": {\"labels\": {\"weight\": {\"text\": 7}}}, \"8-9\": {\"labels\": {\"weight\": {\"text\": 9}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"0-3\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"0-4\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"1-4\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"1-8\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"2-3\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"2-4\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"2-5\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"2-6\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"2-7\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"3-4\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"3-6\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"4-8\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"4-9\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"6-7\": {\"labels\": {\"centrality\": {\"visible\": true}}}, \"8-9\": {\"labels\": {\"centrality\": {\"visible\": true}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"0-3\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"0-4\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"1-4\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"1-8\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"2-3\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"2-4\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"2-5\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"2-6\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"2-7\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"3-4\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"3-6\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"4-8\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"4-9\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"6-7\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}, \"8-9\": {\"labels\": {\"centrality\": {\"color\": \"blue\"}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"0-1\": {\"labels\": {\"centrality\": {\"text\": \"0.02\"}}}, \"0-3\": {\"labels\": {\"centrality\": {\"text\": \"0.11\"}}}, \"0-4\": {\"labels\": {\"centrality\": {\"text\": \"0.07\"}}}, \"1-4\": {\"labels\": {\"centrality\": {\"text\": \"0.18\"}}}, \"1-8\": {\"labels\": {\"centrality\": {\"text\": \"0.00\"}}}, \"2-3\": {\"labels\": {\"centrality\": {\"text\": \"0.40\"}}}, \"2-4\": {\"labels\": {\"centrality\": {\"text\": \"0.00\"}}}, \"2-5\": {\"labels\": {\"centrality\": {\"text\": \"0.20\"}}}, \"2-6\": {\"labels\": {\"centrality\": {\"text\": \"0.04\"}}}, \"2-7\": {\"labels\": {\"centrality\": {\"text\": \"0.18\"}}}, \"3-4\": {\"labels\": {\"centrality\": {\"text\": \"0.44\"}}}, \"3-6\": {\"labels\": {\"centrality\": {\"text\": \"0.13\"}}}, \"4-8\": {\"labels\": {\"centrality\": {\"text\": \"0.20\"}}}, \"4-9\": {\"labels\": {\"centrality\": {\"text\": \"0.20\"}}}, \"6-7\": {\"labels\": {\"centrality\": {\"text\": \"0.02\"}}}, \"8-9\": {\"labels\": {\"centrality\": {\"text\": \"0.00\"}}}}}, \"animation\": {\"**\": {\"duration\": 0}}}}"], "layout": "IPY_MODEL_3edfded3387f4ffbb1969b9015fa8299", "show_buttons": false}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dev-install.html" class="btn btn-neutral float-right" title="Developer Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="networkx-examples.html" class="btn btn-neutral float-left" title="NetworkX Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

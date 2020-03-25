@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Examples &mdash; algorithmx 1.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script type="text/javascript" src="../_static/index.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NetworkX Examples" href="networkx-examples.html" />
+    <link rel="prev" title="Notebooks" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> algorithmx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation and Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http-server.html">HTTP Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter-widget.html">Jupyter Widget</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Graphics Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/selections.html">Selections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphics/utils.html">Utilities</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">Notebooks</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkx-examples.html">NetworkX Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkx-tutorial.html">NetworkX Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev-install.html">Developer Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">algorithmx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="examples.html">Notebooks</a> &raquo;</li>
+        
+      <li>Basic Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/basic-examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="basic-examples">
+<span id="id1"></span><h1>Basic Examples<a class="headerlink" href="#basic-examples" title="Permalink to this headline">¶</a></h1>
+<p>Let’s import the library and create a simple network. You can hold down <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>/<code class="docutils literal notranslate"><span class="pre">cmd</span></code> to zoom in.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">algorithmx</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">size</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "d9cb585b6d11443a90a4499a488ef95c"}
+</script></div>
+<p>That’s nice, but now we would like to animate it. Let’s also add some buttons so that we can easily start/stop/restart our animation.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">(</span><span class="n">buttons</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">size</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">highlight</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="s1">&#39;1.25x&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">traverse</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "56d888e582bd47788209e4c8dd248802"}
+</script></div>
+<p>Finally, lets apply all of this to a larger graph.</p>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">algorithmx</span><span class="o">.</span><span class="n">jupyter_canvas</span><span class="p">(</span><span class="n">buttons</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">edges</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+           <span class="o">+</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)])</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">highlight</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="s1">&#39;1.25x&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">edge</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">traverse</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span>
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "4c61d6d0e8d34183bd783c182bb24085"}
+</script></div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"2e2310b96c764ae5943ac563f5b85980": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d9cb585b6d11443a90a4499a488ef95c": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"size\": [300, 200]}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}}}, \"animation\": {}}}"], "layout": "IPY_MODEL_2e2310b96c764ae5943ac563f5b85980", "show_buttons": false}}, "ccfb5bf953e049db8866ff4626618c66": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "56d888e582bd47788209e4c8dd248802": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"size\": [300, 200]}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"color\": \"blue\"}}}, \"animation\": {\"edges\": {\"1-2\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"1\"}}}}}}}"], "layout": "IPY_MODEL_ccfb5bf953e049db8866ff4626618c66", "show_buttons": true}}, "aa8c9897c2ac43bab6a086624593befc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4c61d6d0e8d34183bd783c182bb24085": {"model_name": "AlgorithmxModel", "model_module": "algorithmx-jupyter", "model_module_version": "^2.0.0", "state": {"_dom_classes": [], "_model_module": "algorithmx-jupyter", "_model_module_version": "^2.0.0", "_model_name": "AlgorithmxModel", "_view_count": null, "_view_module": "algorithmx-jupyter", "_view_module_version": "^2.0.0", "_view_name": "AlgorithmxView", "events": ["{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"visible\": true}, \"2\": {\"visible\": true}, \"3\": {\"visible\": true}, \"4\": {\"visible\": true}, \"5\": {\"visible\": true}, \"6\": {\"visible\": true}, \"7\": {\"visible\": true}}}, \"animation\": {}}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"visible\": true, \"source\": \"1\", \"target\": \"2\"}, \"2-3\": {\"visible\": true, \"source\": \"2\", \"target\": \"3\"}, \"3-4\": {\"visible\": true, \"source\": \"3\", \"target\": \"4\"}, \"4-5\": {\"visible\": true, \"source\": \"4\", \"target\": \"5\"}, \"5-6\": {\"visible\": true, \"source\": \"5\", \"target\": \"6\"}, \"6-7\": {\"visible\": true, \"source\": \"6\", \"target\": \"7\"}, \"1-3\": {\"visible\": true, \"source\": \"1\", \"target\": \"3\"}, \"2-4\": {\"visible\": true, \"source\": \"2\", \"target\": \"4\"}, \"2-7\": {\"visible\": true, \"source\": \"2\", \"target\": \"7\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"1\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"1-2\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"1-2\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"1\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"2\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"2\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"2-3\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"2-3\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"2\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"3\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"3\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"3-4\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"3-4\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"3\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"4\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"4\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"4-5\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"4-5\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"4\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"5\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"5\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"5-6\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"5-6\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"5\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"6\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"6\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"6-7\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"6-7\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"6\"}}}}}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"7\": {\"color\": \"green\"}}}, \"animation\": {}}}", "{\"type\": \"highlight\", \"queue\": \"default\", \"data\": {\"attributes\": {\"nodes\": {\"7\": {\"size\": \"1.25x\"}}}, \"animation\": {}}}", "{\"type\": \"pause\", \"queue\": \"default\", \"data\": {\"duration\": 0.5}}", "{\"type\": \"update\", \"queue\": \"default\", \"data\": {\"attributes\": {\"edges\": {\"7-8\": {\"color\": \"green\"}}}, \"animation\": {\"edges\": {\"7-8\": {\"**\": {\"type\": \"traverse\", \"data\": {\"source\": \"7\"}}}}}}}"], "layout": "IPY_MODEL_aa8c9897c2ac43bab6a086624593befc", "show_buttons": true}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="networkx-examples.html" class="btn btn-neutral float-right" title="NetworkX Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="examples.html" class="btn btn-neutral float-left" title="Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alex Socha
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
