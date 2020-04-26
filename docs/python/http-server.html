@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HTTP Server &mdash; algorithmx 1.1.2 documentation</title>
+  <title>HTTP Server &mdash; algorithmx 1.1.3 documentation</title>
   
 
   
@@ -235,7 +235,7 @@ customize this further, you can tell the server to open a different HTML file, a
 <p>Use the provided HTML file as a guide for creating your own.</p>
 <span class="target" id="module-algorithmx"></span><dl class="function">
 <dt id="algorithmx.http_server">
-<code class="sig-prename descclassname">algorithmx.</code><code class="sig-name descname">http_server</code><span class="sig-paren">(</span><em class="sig-param">file: str = None</em>, <em class="sig-param">port: int = 5050</em><span class="sig-paren">)</span> &#x2192; algorithmx.server.Server.Server<a class="reference internal" href="_modules/algorithmx/main.html#http_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.http_server" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">algorithmx.</code><code class="sig-name descname">http_server</code><span class="sig-paren">(</span><em class="sig-param">file: str = None</em>, <em class="sig-param">host: str = 'localhost'</em>, <em class="sig-param">port: int = 5050</em><span class="sig-paren">)</span> &#x2192; algorithmx.server.Server.Server<a class="reference internal" href="_modules/algorithmx/main.html#http_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.http_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new HTTP server for displaying the network, using WebSockets to transmit data. The server will only start
 once its <a class="reference internal" href="#algorithmx.server.Server.start" title="algorithmx.server.Server.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a> method is called. After the server has started, the network can be viewed by
 opening a browser and navigating to the address <code class="docutils literal notranslate"><span class="pre">http://localhost:5050/</span></code> (change the port as necessary).</p>
@@ -254,7 +254,7 @@ as a guide.</p>
 
 <dl class="class">
 <dt id="algorithmx.server.Server">
-<em class="property">class </em><code class="sig-prename descclassname">algorithmx.server.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param">file: str</em>, <em class="sig-param">port: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/algorithmx/server/Server.html#Server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">algorithmx.server.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param">file: str</em>, <em class="sig-param">host: str</em>, <em class="sig-param">port: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/algorithmx/server/Server.html#Server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#algorithmx.server.Server" title="Permalink to this definition">¶</a></dt>
 <dd><p>A local HTTP server using WebSockets to transmit data.</p>
 <dl class="method">
 <dt id="algorithmx.server.Server.start">
